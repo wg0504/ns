@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_08a5421a35e58768c60b62bc34bf8df2d65ae5d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_3c16d3d22dbafda6c5222bcca7534a21d0a2c978.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_4963622ae1d2dbcd341acd063167d7c09d86c36c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_ca54cd96243cd4ee0f90f54ecb4b22966f5239df.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/src/main/libs/nv-websocket-client.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="2e2859df4b1c217c768c1b4a23f54ef66af50140">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/nv-websocket-client_d5869bb292798dc70a61eed52ee0c721cb89311e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_68829008d4787c53338d4828d744d1ab5160ce7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_5206df485ecc4936c929848230aadf4e0519a2f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/.gradle/caches/modules-2/files-2.1/com.drewnoakes/metadata-extractor/2.10.1/e1852a8f519dbb0196fdb41bf2c584a8858189f8/metadata-extractor-2.10.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="e1852a8f519dbb0196fdb41bf2c584a8858189f8">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/metadata-extractor-2.10.1_e63f3b132093e733844c4934dedf0bd2d6ed9c33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_06ddfc30c817cdfad4ce75b72f9369e335b25ada.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/.gradle/caches/modules-2/files-2.1/com.adobe.xmp/xmpcore/5.1.3/57e70c3b10ff269fff9adfa7a31d61af0df30757/xmpcore-5.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="57e70c3b10ff269fff9adfa7a31d61af0df30757">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/xmpcore-5.1.3_f1034a424886fc360cb0331af061875780021b72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yeom/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_f0d2df5ca61181ea80dbd22fd120cb5e62114100.jar" />
+    </item>
+
+</items>

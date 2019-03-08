@@ -1,0 +1,30 @@
+<App>
+    <!-- <JavaScript File="MainView.js" /> -->
+    <!-- <ClientPanel>
+        <Panel ux:Name="fullScreen" />
+        <ResourceObject Key="fullScreen" Value="fullScreen" />
+        <DockPanel Margin="10">
+            <PieChart/>
+        </DockPanel>
+        <JavaScript>
+            var Observable = require("FuseJS/Observable");
+            exports.data = Observable({y:10 }, { y: 5 }, { y: 3 });
+        </JavaScript>
+        <c:Plot>
+            <c:DataSeries Data="{data}" />
+            <c:PlotData>
+                <c:PlotBar Color="#FFFFFF" />
+            </c:PlotData>
+        </c:Plot>
+
+    </ClientPanel> -->
+    <ClientPanel>
+        <Android.StatusBarConfig Color="#0003" IsVisible="True" />
+        <iOS.StatusBarConfig Style="Light" Animation="Slide" IsVisible="True" />
+        <NativeViewHost>
+            <WebView Dock="Fill" Url="http://192.168.0.6:3000">
+
+            </WebView>
+        </NativeViewHost>
+    </ClientPanel>
+</App>

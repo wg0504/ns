@@ -1,0 +1,18 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+    "Fuse.Charting"
+  ],
+  "Includes": [
+    "*"
+  ]
+
+}
+
+
+ /* ,
+   "Projects": [
+    "./src/Fuse.BackgroundDownload.unoproj",
+  ]
+  */

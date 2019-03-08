@@ -1,0 +1,58 @@
+.Rectangle-Login {
+  border-radius: 60.5px;
+  background: #181f72;
+  color: white;
+  padding: 1.3rem;
+}
+
+.Rectangle-Sign {
+  border-radius: 29.5px;
+  border: solid 1px #181f72;
+  background: #ffffff;
+  color: #181f72;
+  padding: 1.3rem;
+}
+
+.White-Font {
+  font-family: AppleSDGothicNeo;
+  font-size: 60px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.column-box {
+  flex-direction: column;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+
+.slogan {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #181f72;
+  font-weight: 200;
+}
+
+.slogan span {
+  font-weight: 600;
+}
+
+.white-space {
+  flex: 1;
+  display: flex;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}

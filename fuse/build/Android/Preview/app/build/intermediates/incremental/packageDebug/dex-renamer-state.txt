@@ -1,0 +1,4 @@
+#Tue Mar 05 16:38:45 KST 2019
+base.0=/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/yeom/Documents/NS/build/Android/Preview/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
