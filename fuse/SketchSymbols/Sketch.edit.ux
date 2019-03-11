@@ -1,0 +1,5 @@
+<Panel ux:Class="Sketch.edit" Width="14" Height="14">
+	<Image File="images/c77cba2a69aa28403f929d52921521f6962ca4de.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- edit-2 -->
+	</Image>
+</Panel>

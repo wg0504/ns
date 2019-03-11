@@ -1,0 +1,15 @@
+<Panel ux:Class="Sketch.enter" Width="36" Height="36">
+	<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- Group -->
+		<Image File="images/e0b07b4114b84018772e13ec4b0e05b39d2606f6.png" Width="61.11111%" Height="58.33333%" Alignment="TopLeft" Offset="22.22222%, 19.44444%" Margin="0">
+			<!-- up-arrow -->
+		</Image>
+		<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+			<!-- Rectangle 25 -->
+			<Rectangle Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+			</Rectangle>
+		</Panel>
+	</Panel>
+</Panel>

@@ -6,7 +6,7 @@
 }
 
 .Rectangle-Sign {
-  border-radius: 29.5px;
+  border-radius: 60.5px;
   border: solid 1px #181f72;
   background: #ffffff;
   color: #181f72;
@@ -54,5 +54,37 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+}
+
+.items {
+  flex-grow: 1;
+}
+
+.items2 {
+  flex-grow: 2;
+}
+
+.coulmn {
+  flex-direction: column;
+}
+
+.coulmn-reverse {
+  flex-direction: column-reverse;
+  padding-bottom: 1.5rem;
+}
+
+.login-form {
+  padding: 0.5rem;
+  border-bottom: solid 1px #e4e4e4;
+}
+
+.text-box {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.max-width {
+  width: 100%;
 }

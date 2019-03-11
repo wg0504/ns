@@ -1,0 +1,7 @@
+<Panel ux:Class="Sketch.close" Width="16" Height="12">
+	<Panel>
+		<!-- Path Copy 2 -->
+		<!-- Combined shapes are not supported in UX -->
+		<Rotation Degrees="-180" />
+	</Panel>
+</Panel>

@@ -1,0 +1,36 @@
+<Panel ux:Class="Sketch.Next" Width="104" Height="25" NEXT="NEXT">
+	<string ux:Property="NEXT" />
+	<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- Next -->
+		<Panel Width="11.53846%" Height="48%" Alignment="TopLeft" Offset="87.5%, 52%" Margin="0">
+			<!-- Line 2 -->
+			<Path Data="M 1 0 L 0 1" StretchMode="Fill" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<Stroke Width="4" Alignment="Center">
+					<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+				</Stroke>
+			</Path>
+		</Panel>
+		<Panel Width="12.5%" Height="52%" Alignment="TopLeft" Offset="87.5%, 0%" Margin="0">
+			<!-- Line 2 -->
+			<Path Data="M 0.03571428571429 0.03571428571429 L 0.9642857142857 0.9642857142857" StretchMode="Fill" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<Stroke Width="4" Alignment="Center">
+					<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+				</Stroke>
+			</Path>
+		</Panel>
+		<Panel Width="33.65385%" Height="12%" Alignment="TopLeft" Offset="65.38461%, 44%" Margin="0">
+			<!-- Line -->
+			<Path Data="M 0.01351351351351 0.5 L 0.9864864864865 0.5" StretchMode="Fill" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<Stroke Width="4" Alignment="Center">
+					<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+				</Stroke>
+			</Path>
+		</Panel>
+		<Text Color="0.09411765, 0.1215686, 0.4470588, 1" FontSize="20" Value="{Property NEXT}" TextTruncation="None" TextWrapping="Wrap" TextAlignment="Left" Width="56" Alignment="HorizontalCenter" Offset="-23.07692%, 0" Margin="0, 0, 0, 1">
+			<!-- NEXT -->
+		</Text>
+	</Panel>
+</Panel>

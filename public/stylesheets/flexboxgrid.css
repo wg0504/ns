@@ -29,6 +29,8 @@
 .container-fluid {
   padding-right: var(--outer-margin, 2rem);
   padding-left: var(--outer-margin, 2rem);
+  width: 100%;
+  height: 100%;
 }
 
 .row {

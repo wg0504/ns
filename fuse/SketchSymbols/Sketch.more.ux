@@ -1,0 +1,6 @@
+<Panel ux:Class="Sketch.more" Width="16" Height="12">
+	<Panel>
+		<!-- Path Copy 2 -->
+		<!-- Combined shapes are not supported in UX -->
+	</Panel>
+</Panel>

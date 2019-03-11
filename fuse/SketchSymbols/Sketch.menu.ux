@@ -1,0 +1,26 @@
+<Panel ux:Class="Sketch.menu" Width="18" Height="17">
+	<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- menu -->
+		<Panel Width="100%" Height="17.64706%" Alignment="TopLeft" Offset="0%, 82.35294%" Margin="0">
+			<!-- Rectangle Copy 2 -->
+			<Rectangle CornerRadius="1.5" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+			</Rectangle>
+		</Panel>
+		<Panel Width="77.77778%" Height="17.64706%" Alignment="TopLeft" Offset="0%, 41.17647%" Margin="0">
+			<!-- Rectangle Copy -->
+			<Rectangle CornerRadius="1.5" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+			</Rectangle>
+		</Panel>
+		<Panel Width="100%" Height="17.64706%" Alignment="TopLeft" Margin="0">
+			<!-- Rectangle -->
+			<Rectangle CornerRadius="1.5" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+			</Rectangle>
+		</Panel>
+	</Panel>
+</Panel>

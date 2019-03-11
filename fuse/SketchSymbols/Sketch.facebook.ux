@@ -1,0 +1,9 @@
+<Panel ux:Class="Sketch.facebook" Width="63" Height="69">
+	<Panel Width="69.84127%" Height="63.76812%" Alignment="TopLeft" Offset="14.28571%, 0%" Margin="0">
+		<!-- Oval 6 Copy 2 -->
+		<Path Data="M 0.5 1 C 0.7761423749 1 1 0.7761423749 1 0.5 C 1 0.2238576251 0.7761423749 0 0.5 0 C 0.2238576251 0 0 0.2238576251 0 0.5 C 0 0.7761423749 0.2238576251 1 0.5 1" StretchMode="Fill" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+			<!-- Path -->
+			<SolidColor Color="0.01555647, 0.1446316, 0.5780984, 1" />
+		</Path>
+	</Panel>
+</Panel>

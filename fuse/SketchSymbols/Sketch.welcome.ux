@@ -1,0 +1,5 @@
+<Panel ux:Class="Sketch.welcome" Width="156" Height="100">
+	<Text Color="0.09217223, 0.1212679, 0.4475978, 1" FontSize="25" Value="Welcome to the new NS-Business" TextTruncation="None" TextWrapping="Wrap" TextAlignment="Left" Width="161" Alignment="Default" >
+		<!-- Welcome to the new N -->
+	</Text>
+</Panel>

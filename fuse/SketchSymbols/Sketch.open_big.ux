@@ -1,0 +1,11 @@
+<Panel ux:Class="Sketch.open_big" Width="18" Height="10">
+	<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- Path 6 -->
+		<Path Data="M 0 0 L 0.4708963568948 1 L 1 0" StretchMode="Fill" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+			<!-- Path -->
+			<Stroke Width="3" Alignment="Center">
+				<SolidColor Color="0.09411765, 0.1215686, 0.4470588, 1" />
+			</Stroke>
+		</Path>
+	</Panel>
+</Panel>

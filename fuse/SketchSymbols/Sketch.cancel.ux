@@ -1,0 +1,5 @@
+<Panel ux:Class="Sketch.cancel" Width="16" Height="17">
+	<Image File="images/3f9e334384e7c05902256bd72b90be08565fa8e6.png" Width="100%" Height="94.11765%" Alignment="TopLeft" Offset="0%, 2.941176%" Margin="0">
+		<!-- cancel -->
+	</Image>
+</Panel>

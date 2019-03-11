@@ -1,0 +1,5 @@
+<Panel ux:Class="Sketch.share" Width="18" Height="18">
+	<Image File="images/86e4ed80677d8b983e34421f5ab9fe29bd69bc3f.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- share -->
+	</Image>
+</Panel>

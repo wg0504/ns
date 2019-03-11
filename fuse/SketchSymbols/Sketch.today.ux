@@ -1,0 +1,16 @@
+<Panel ux:Class="Sketch.today" Width="67" Height="31" TODAY="TODAY">
+	<string ux:Property="TODAY" />
+	<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- Group -->
+		<Text Color="0.1843137, 0.1843137, 0.1843137, 1" FontSize="15" Value="{Property TODAY}" TextTruncation="None" TextWrapping="Wrap" TextAlignment="Left" Width="68.65672%" Height="61.29032%" Alignment="BottomLeft" Offset="16.41791%, -6" Margin="0">
+			<!-- TODAY -->
+		</Text>
+		<Panel Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+			<!-- Rectangle 18 -->
+			<Rectangle CornerRadius="15.5" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+				<!-- Path -->
+				<SolidColor Color="0.847, 0.847, 0.847, 1" />
+			</Rectangle>
+		</Panel>
+	</Panel>
+</Panel>

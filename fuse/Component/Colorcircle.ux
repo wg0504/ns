@@ -1,0 +1,18 @@
+<StackPanel ux:Class="Colorcircle">
+    <string ux:Property="text" />
+    <Circle Color="{Property color}" ux:Name="circle" Width="49" Height="49" Opacity="0.35">
+        <float4 ux:Property="color" />
+        <string ux:Property="ID" />
+        <Selectable Value="{ReadProperty ID}" />
+        <Image ux:Name="MarkV" Opacity="0" Width="35%" File="../Assets/MarkV.png" Alignment="Center" />
+        <Attractor ux:Name="colorAttractor" Target="circle.Opacity" Value="0.35" Type="Easing" Duration="0.2" DurationExp="0" />
+        <WhileSelected>
+            <Change Duration="0.5" DurationBack="0" colorAttractor.Value="1" />
+            <Change Duration="0" DurationBack="0" MarkV.Opacity="1" />
+        </WhileSelected>
+        <Clicked>
+            <ToggleSelection />
+        </Clicked>
+    </Circle>
+    <Text TextWrapping="Wrap" FontSize="12" Font="NotoRegular" Alignment="Center">{Property text}</Text>
+</StackPanel>

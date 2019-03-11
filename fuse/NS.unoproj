@@ -1,18 +1,18 @@
 {
-  "Packages": [
-    "Fuse",
-    "FuseJS",
-    "Fuse.Charting"
-  ],
-  "Includes": [
-    "*"
-  ]
+    "RootNamespace": "",
+    "Packages": [
+        "Fuse.Maps",
+        "Fuse",
+        "FuseJS",
+        "Fuse.GeoLocation"
+    ],
 
+    "Includes": [
+    "*",
+        "**.js:FuseJS", 
+        "*.jpg:Bundle",
+        "Assets/*.png:Bundle",
+        "Assets/*.jpg:Bundle",
+        "Assets/*.jpeg:Bundle"
+    ]
 }
-
-
- /* ,
-   "Projects": [
-    "./src/Fuse.BackgroundDownload.unoproj",
-  ]
-  */

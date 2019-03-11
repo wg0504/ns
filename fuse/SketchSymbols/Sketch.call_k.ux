@@ -1,0 +1,5 @@
+<Panel ux:Class="Sketch.call_k" Width="32" Height="21">
+	<Text Color="0.1843137, 0.1843137, 0.1843137, 1" FontSize="18" Value="통화" TextTruncation="None" TextWrapping="Wrap" TextAlignment="Center" Width="100%" Height="100%" Alignment="BottomLeft" Margin="0">
+		<!-- 통화 -->
+	</Text>
+</Panel>

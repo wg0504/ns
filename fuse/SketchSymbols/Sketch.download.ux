@@ -1,0 +1,5 @@
+<Panel ux:Class="Sketch.download" Width="13" Height="13">
+	<Image File="images/5ff5f00e2b4adae93ada7abfcb65dcc9ed716dfc.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
+		<!-- download -->
+	</Image>
+</Panel>
