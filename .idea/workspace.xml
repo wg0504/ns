@@ -3,57 +3,107 @@
   <component name="ChangeListManager">
     <list default="true" id="2dce74cb-a5f2-403e-bddb-76f504cf8f5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PieChart.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/css/flexboxgrid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/css/flexboxgrid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/css/index.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/design/flexboxgrid-template.sketch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/dist/flexboxgrid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/dist/flexboxgrid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/img/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/src/css/flexboxgrid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/src/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/src/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/vendor/css/normalize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/vendor/js/modernizr.flexbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/Assets/MarkV.png" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/Assets/MarkV.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/Assets/user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/ChartPage.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/Component/Header.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/Component/Header.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/Component/Inputbox.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/Component/Inputbox.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/Component/Login_btn.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/Component/Login_btn.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/MainView.js" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/MainView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuse/MainView.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/MainView.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/NS-Business.sketch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/NS.sketchFiles" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fuse/NS.unoproj" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/NS.unoproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/PieChart.ux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/.unobuild" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/.unobuild" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/NS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/NS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/DotNetDll/Preview/bundle" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/DotNetDll/Preview/bundle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/_-4e3b0036" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/_-4e3b0036" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/mainview.g-392e7381" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/mainview.g-392e7381" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/ns.unoproj.g-ea90df47" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/ns.unoproj.g-ea90df47" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/uno55/piechart.g-6995357f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/MainView.g.uno" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/MainView.g.uno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/NS.g" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/NS.g" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/NS.unoproj.g.uno" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/NS.unoproj.g.uno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/cache/ux15/PieChart.g.uno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer/preamble/$.uno" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer/preamble/$.uno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/.unobuild" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/.unobuild" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/NS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/NS.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/DotNetDll/Preview/bundle" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/DotNetDll/Preview/bundle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/_-01a97fd9" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/_-01a97fd9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/mainview.g-cb7e784a" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/mainview.g-cb7e784a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/ns.unoproj.g-f2aa74cc" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/ns.unoproj.g-f2aa74cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/uno55/piechart.g-0dbd9064" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/MainView.g.uno" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/MainView.g.uno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/NS.g" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/NS.g" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/NS.unoproj.g.uno" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/NS.unoproj.g.uno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/cache/ux15/PieChart.g.uno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/build/Local/Designer1/preamble/$.uno" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/build/Local/Designer1/preamble/$.uno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/.uno/uno55/androidimpl-33d3ce7d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/.uno/uno55/impl-ec3acc79" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/.uno/uno55/iosimpl-8e0f7bbd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/.uno/uno55/js-a58d736b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Android/AndroidImpl.uno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Android/BackgroundDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Android/CompleteDownload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Android/DownloadRunnable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Android/PausedDownload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Android/ProgressData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Dummy/Impl.uno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/Fuse.BackgroundDownload.unoproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/JS.uno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/hmm.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/iOS/AppDelegateDownloadListener.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/iOS/AppDelegateDownloadListener.mm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/iOS/DownloadDelegate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/iOS/DownloadDelegate.mm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuse/src/iOS/iOSImpl.uno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/NS.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/NS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/flexboxgrid.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/flexboxgrid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.Before.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.Next.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.all.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.before_w.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.calendar_g.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.call_k.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.cancel.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.close.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.clsoe_big.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.complete.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.download.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.edit.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.enter.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.facebook.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.home.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.home_w.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.introduction.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.kakao.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.line.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.login.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.main_text.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.menu.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.month.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.more.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.open_big.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.phone_w.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.placeholder.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.save.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.search.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.search_g.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.search_w.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.settings.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.share.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.signup.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.telephone.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.today.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.user.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/Sketch.welcome.ux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/0ed36b4471cde162c30a6dd750f5148a31bf9bd9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/21bcabeb69e29621ef0a7f8b34f708d6058d2b75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/246b00ff16f94a5bd409e108c85f45f27a5a6388.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/3c66f59300f794c5637a3e6e337329a58c80a96d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/3f9e334384e7c05902256bd72b90be08565fa8e6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/5176a2208f553fb8d89f54738295130a5a8f136e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/5ff5f00e2b4adae93ada7abfcb65dcc9ed716dfc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/64ba3dd9453b7241f4bf07545354d14998ed3dd7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/789458eb5c114b915108c8162601885fd85f1046.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/86e4ed80677d8b983e34421f5ab9fe29bd69bc3f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/9a8293f04e933cf833683bce3770745edfb50043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/bf5ed4dbf3d90f241182a3d30c64552e29c5b9f9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/c77cba2a69aa28403f929d52921521f6962ca4de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/e0b07b4114b84018772e13ec4b0e05b39d2606f6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/SketchSymbols/images/e22f634d8fbedfbd9e98fd4e5a9feefa11a988c8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/devices.json" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/devices.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/Login.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/Login.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/Sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/Sign.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/Sign.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/SignInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/SignInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/SignInfo.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/SignInfo.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/pages/Splash.ux" beforeDir="false" afterPath="$PROJECT_DIR$/fuse/pages/Splash.ux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuse/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -92,52 +142,64 @@
     <session id="-1168357891">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="ejs" value="1" />
+          <entry key="jpg" value="1" />
+          <entry key="js" value="1" />
+          <entry key="svg" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="EJS" value="1" />
+          <entry key="Image" value="1" />
+          <entry key="JavaScript" value="1" />
+          <entry key="SVG" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="ejs" value="75" />
+          <entry key="js" value="360" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="EJS" value="75" />
+          <entry key="JavaScript" value="360" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/www">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/test.js" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
@@ -152,22 +214,19 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/flexboxgrid-6.3.1/flexboxgrid-6.3.1/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,6 +243,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +251,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -205,12 +271,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.test.js">
+    <configuration name="test.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="www" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="www" working-dir="$PROJECT_DIR$/bin">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Node.js.www" />
+      <item itemvalue="Node.js.test.js" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.test.js" />
         <item itemvalue="Node.js.www" />
       </list>
     </recent_temporary>
@@ -227,22 +301,27 @@
       <updated>1552030070368</updated>
       <workItem from="1552030071461" duration="230000" />
       <workItem from="1552031178455" duration="1967000" />
+      <workItem from="1552297167947" duration="315000" />
+      <workItem from="1552357891305" duration="1583000" />
+      <workItem from="1552451537303" duration="1457000" />
+      <workItem from="1553594716783" duration="827000" />
+      <workItem from="1553595683316" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2197000" />
+    <option name="totallyTimeSpent" value="6382000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="1920" height="1057" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33403805" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32982087" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.61118335" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -250,7 +329,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32769832" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -263,12 +342,25 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/images/eye.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/rolling.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
@@ -279,12 +371,15 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="420">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

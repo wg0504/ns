@@ -1,0 +1,19 @@
+{
+  "RootNamespace": "",
+  "Packages": [
+    "Fuse.Maps",
+    "Fuse",
+    "FuseJS",
+    "Fuse.Launcher",
+    "Fuse.Charting"
+  ],
+
+  "Includes": [
+    "*",
+    "**.js:FuseJS",
+    "*.jpg:Bundle",
+    "Assets/*.png:Bundle",
+    "Assets/*.jpg:Bundle",
+    "Assets/*.jpeg:Bundle"
+  ]
+}

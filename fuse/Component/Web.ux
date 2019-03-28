@@ -1,0 +1,14 @@
+<Panel ux:Class="Web" Dock="Fill">
+    <NativeViewHost>
+        <WebView Url="{Url}">
+            <PageLoaded>
+                <EvaluateJS Handler="{onPageLoaded}">
+                    var result = {
+                    url : document.location.href
+                    };
+                    return result;
+                </EvaluateJS>
+            </PageLoaded>
+        </WebView>
+    </NativeViewHost>
+</Panel>

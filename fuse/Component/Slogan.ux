@@ -1,0 +1,7 @@
+<Grid ux:Class="Slogan" ColumnCount="2" RowCount="3" CellSpacing="19" Columns="7*,3*" Margin="27, 0, 0, 0" Alignment="Top">
+    <Panel Column="0" Row="0">
+        <Text Font="MonLight" Color="#FFFFFF" FontSize="27" Value="Welcome to" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
+    </Panel>
+    <Text Font="MonLight" Column="0" Row="1" Color="#FFFFFF" FontSize="27" Value="the new" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
+    <Text Font="MonSemiBold" Column="0" Row="2" Color="#FFFFFF" FontSize="27" Value="NS-Business" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
+</Grid>

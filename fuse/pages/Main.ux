@@ -1,0 +1,29 @@
+<ClientPanel ux:Class="Main">
+    <Activated Handler="{id_reload}"/>
+    <DockPanel ZOffset="2">
+        <Grid Dock="Top" RowCount="1" ColumnCount="2" Margin="27, 26, 27, 22">
+            <Navicon Color="#FFFFFF" Row="0" Column="0" Alignment="CenterLeft">
+                <Clicked Handler="{open}"/>
+            </Navicon>
+            <Rectangle Width="30" Height="30" Alignment="CenterRight">
+                <Rectangle Row="0" Column="1" Width="24" Height="24">
+                    <Image File="../Assets/Calenderx2.png" StretchMode="Fill" />
+                </Rectangle>
+            </Rectangle>
+        </Grid>
+        <ScrollView SnapMinTransform="False" SnapMaxTransform="False">
+            <StackPanel ItemSpacing="28">
+                <Banner />
+                <notice />
+                <Gallery />
+                <Support />
+                <Industries Margin="27,0,27,0" />
+            </StackPanel>
+        </ScrollView>
+    </DockPanel>
+    <navigator Width="100%" ZOffset="3" X="-100%" ux:Name="navi" />
+    <WhileTrue Value="{sidebar}">
+        <Change navi.X="0" Duration="0.3" />
+    </WhileTrue>
+
+</ClientPanel>

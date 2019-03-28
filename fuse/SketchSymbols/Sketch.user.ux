@@ -1,5 +1,0 @@
-<Panel ux:Class="Sketch.user" Width="17" Height="17">
-	<Image File="images/e22f634d8fbedfbd9e98fd4e5a9feefa11a988c8.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
-		<!-- profile -->
-	</Image>
-</Panel>

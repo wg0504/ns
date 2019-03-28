@@ -1,0 +1,18 @@
+<Grid ux:Class="Detail" RowCount="1" ColumnCount="3" Columns="19*,3*,3*" Margin="27, 26, 27, 22">
+    <Rectangle Width="30" Height="30" Row="0" Column="0" Alignment="CenterLeft" Color="#FFFFFF">
+        <Clicked Handler="{goBack}"/>
+        <Image File="../Assets/before.png" Width="9" Height="18"  Color="#000000" />
+    </Rectangle>
+    <Rectangle Width="30" Height="30" Row="0" Column="1" Alignment="CenterRight" Color="#FFFFFF">
+        <Clicked Handler="{navigation.goMain}"/>
+        <Rectangle  Width="22" Height="22">
+            <Image File="../Assets/home.png" StretchMode="Fill" Alignment="CenterRight" />
+        </Rectangle>
+    </Rectangle>
+    <Rectangle Width="30" Height="30" Row="0" Column="2" Alignment="CenterRight" Color="#FFFFFF">
+        <Rectangle  Width="24" Height="24">
+            <Image File="../Assets/Calenderx2.png" StretchMode="Fill" Alignment="CenterRight" />
+        </Rectangle>
+    </Rectangle>
+
+</Grid>

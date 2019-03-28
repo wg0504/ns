@@ -1,0 +1,13 @@
+<Panel ux:Class="Company_box" Height="79">
+    <Clicked Handler="{goCompany_int}"/>
+    <float ux:Property="idx" />
+    <string ux:Property="Company" />
+    <string ux:Property="Name" />
+    <StackPanel Margin="13,11,13,0">
+        <Text FontSize="20" Font="NotoBold" Color="#2f2f2f">{Property Company}</Text>
+        <Text FontSize="18" Font="NotoMedium" Color="#2f2f2f">{Property Name}</Text>
+    </StackPanel>
+    <Rectangle Height="1" Alignment="Bottom">
+        <SolidColor Color="#979797" />
+    </Rectangle>
+</Panel>

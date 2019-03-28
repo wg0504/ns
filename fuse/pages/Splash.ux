@@ -1,2 +1,3 @@
-<Panel>
-</Panel>
+<ClientPanel ux:Class="Splash" Color="#181f72">
+    <Slogan Height="103" Y="28%" />
+</ClientPanel>

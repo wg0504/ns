@@ -1,51 +1,57 @@
 <ClientPanel ux:Class="Login">
-  <ScrollView Padding="27,0,27,0" SnapMinTransform="False" SnapMaxTransform="False" Alignment="VerticalCenter">
-    <StackPanel ItemSpacing="15">
-      <Grid ColumnCount="2" RowCount="3" CellSpacing="2" Columns="6*,4*" Margin="0, 50, 0, 0">
-        <Panel Column="0" Row="0">
-          <Text Font="MonLight" Color="0.09217223, 0.1212679, 0.4475978, 1" FontSize="25" Value="Welcome to" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
-        </Panel>
-        <Text Font="MonLight" Column="0" Row="1" Color="0.09217223, 0.1212679, 0.4475978, 1" FontSize="25" Value="the new" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
-        <Text Font="MonSemiBold" Column="0" Row="2" Color="0.09217223, 0.1212679, 0.4475978, 1" FontSize="25" Value="NS-Business" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
+    <Panel Width="8" Height="17" Margin="29,29,0,0" Color="#FFFFFF" Alignment="TopLeft">
+        <Clicked Handler="{navigation.backMain}"/>
+        <Image File="../Assets/before.png" Color="#2b2b2b" />
+      </Panel>
+  <ScrollView Width="100%" Padding="27,0,27,0" SnapMinTransform="False" SnapMaxTransform="False" Alignment="Center">
+    <StackPanel>
+      <Grid ColumnCount="1" RowCount="2" Margin="0,0,0,58 ">
+        <Text Font="NotoMedium" Column="0" Row="0" Color="#181f72" FontSize="24" Value="서비스 이용을 위한" TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
+        <Text Font="NotoBold" Column="0" Row="1" Color="#181f72" FontSize="24" Value="로그인이 필요합니다." TextWrapping="Wrap" TextAlignment="Left" Alignment="Default" />
       </Grid>
-      <Rectangle Height="0" />
-      <Panel Height="50">
-        <Grid RowCount="2" ColumnCount="1" CellSpacing="10">
-          <Grid Row="0" ColumnCount="2" RowCount="1" Columns="2*,8*" ChildOrder="ColumnMajor">
-            <Panel Row="0" Column="0">
-              <Image File="../Assets/user.png" Color="#E6E6E6" Padding="0, 0, 0, 0" />
-            </Panel>s
-            <TextInput Column="1" Row="0" PlaceholderText="ID" PlaceholderColor="#e4e4e4" FontSize="18" Font="MonSemiBold">
-            </TextInput>
-          </Grid>
-          <Rectangle Row="1" Column="0" Color="#000000" Height="1" />
+      <Panel Height="50" Color="#FFFFFF" Margin="0,0,0,12">
+        <Grid Row="0" ColumnCount="2" RowCount="1" Columns="2*,8*" ChildOrder="ColumnMajor">
+          <Panel Height="17" Width="17" Row="0" Column="0">
+            <Image File="../Assets/user.png" Color="#000000" Padding="0, 0, 0, 0" />
+          </Panel>
+          <TextInput Column="1" Row="0" PlaceholderText="ID" PlaceholderColor="#e4e4e4" FontSize="18" Font="NotoMedium" Value="{id}">
+          </TextInput>
         </Grid>
+        <Rectangle Alignment="Bottom" Height="1" Color="#e4e4e4" />
       </Panel>
 
-      <Panel Height="50">
-        <Grid RowCount="2" CellSpacing="10">
-          <Grid Row="0" ColumnCount="2" RowCount="1" Columns="2*,8*" ChildOrder="ColumnMajor">
-            <Panel Row="0" Column="0">
-              <Image File="../Assets/unlock.png" Color="#E6E6E6" Padding="0, 0, 0, 0" />
-            </Panel>
-            <TextInput IsPassword="True" Column="1" Row="0" PlaceholderText="PASSWORD" PlaceholderColor="#e4e4e4" FontSize="18">
-            </TextInput>
-          </Grid>
-          <Rectangle Row="1" Column="0" Color="#000000" Height="1" />
+
+      <Panel Height="50" Margin="0,0,0,12">
+        <Grid Row="0" ColumnCount="2" RowCount="1" Columns="2*,8*" ChildOrder="ColumnMajor">
+          <Panel Height="21" Width="21" Row="0" Column="0">
+            <Image File="../Assets/unlock.png" Color="#000000" Padding="0, 0, 0, 0" />
+          </Panel>
+          <TextInput IsPassword="True" Column="1" Row="0" Font="MonSemiBold" PlaceholderText="PASSWORD" PlaceholderColor="#e4e4e4" FontSize="18" Value="{pw}">
+          </TextInput>
         </Grid>
+        <Rectangle Alignment="Bottom" Height="1" Color="#e4e4e4" />
       </Panel>
 
-      <Grid Height="59" CellSpacing="18" ColumnCount="2" RowCount="1">
-        <Login_btn Column="0" Row="0" Color="#181f72" CornerRadius="30" text="LOGIN" color="#FFFFFF" Alignment="Default" />
-        <Login_btn Column="1" Row="0" Color="#FFFFFF" CornerRadius="30" text="SIGN UP" color="#181f72">
-          <Clicked Handler="{ navigation.goSignInfo }">
-          </Clicked>
-          <Stroke Width="1.5" Color="#181f72" />
+      <Text ux:Name="warn_text" Color="#f71313" FontSize="13" Value="아이디 또는 비밀번호를 다시 확인하세요" Alignment="Center" Font="NotoMedium" Opacity="0" />
+
+      <Rectangle Margin="0,0,0,25" Height="0" />
+
+      <Grid Height="59" CellSpacing="18" ColumnCount="2" RowCount="1" Margin="0,0,0,12">
+        <Login_btn Column="0" Row="0" Color="#181f72" CornerRadius="30" text="로그인" color="#FFFFFF" Alignment="Default">
+          <Clicked Handler="{ Login }" />
+        </Login_btn>
+        <Login_btn Column="1" Row="0" Color="#FFFFFF" CornerRadius="30" text="회원가입" color="#181f72">
+          <Clicked Handler="{ navigation.goSignInfo }" />
+          <Stroke Width="1" Color="#181f72" Alignment="Outside" />
         </Login_btn>
       </Grid>
 
-      <Login_btn Height="59" Color="#181f72" Margin="0, 0, 0, 0" CornerRadius="30" text="GUEST" color="#FFFFFF" Alignment="Default" Width="100%" />
-      <Text Dock="Bottom" FontSize="12" Font="NotoRegular" Alignment="Center" TextAlignment="Center" Margin="0, 0, 0, 0">회원정보를 잊으셨나요?</Text>
+      <Login_btn Height="59" Color="#181f72" Margin="0, 0, 0, 0" CornerRadius="30" text="회원 정보 찾기" color="#FFFFFF" Alignment="Default" Width="100%" />
+
     </StackPanel>
   </ScrollView>
+
+  <WhileTrue Value="false" ux:Name="warning">
+    <Change warn_text.Opacity="1" Duration="0.5" />
+  </WhileTrue>
 </ClientPanel>

@@ -1,0 +1,5 @@
+<ClientPanel ux:Class="SupportPage">
+    <Detail Dock="Top" />
+    <Text Dock="Top" FontSize="22" Color="#181f72" Font="NotoBold" Margin="27, 0, 0, 10">기업지원소식</Text>
+    <Web />
+</ClientPanel>

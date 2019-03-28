@@ -1,0 +1,19 @@
+<Grid ux:Class="MameberNav" RowCount="1" ColumnCount="3" Columns="19*,3*,3*" Margin="27, 26, 27, 22">
+    <string ux:Property="color" />
+    <string ux:Property="color2" />
+    <Rectangle Width="30" Height="30" Row="0" Column="0" Alignment="CenterLeft" Color="{Property color}">
+        <Clicked Handler="{navigation.goBack}" />
+        <Image File="../Assets/before.png" Width="9" Height="18" Color="{Property color2}" />
+    </Rectangle>
+    <Rectangle Width="30" Height="30" Row="0" Column="1" Alignment="CenterRight" Color="{Property color}">
+        <Clicked Handler="{navigation.goMain}" />
+        <Rectangle Width="22" Height="22">
+            <Image File="../Assets/home.png" StretchMode="Fill" Alignment="CenterRight" Color="{Property color2}" />
+        </Rectangle>
+    </Rectangle>
+    <Rectangle Width="30" Height="30" Row="0" Column="2" Alignment="CenterRight" Color="{Property color}">
+        <Rectangle Width="24" Height="24">
+            <Image File="../Assets/Search.png" StretchMode="Fill" Alignment="CenterRight" Color="{Property color2}" />
+        </Rectangle>
+    </Rectangle>
+</Grid>

@@ -1,0 +1,61 @@
+<Panel ux:Class="navigator"  >
+    <Rectangle Layer="Background" Opacity="0.95" Color="#FFFFFF"/>
+    <Panel Width="40" Height="40" Alignment="TopRight" Margin="0, 27, 27, 0" Color="#FFFFFF">
+        <Clicked Handler="{open}" />
+        <Rectangle Width="20" Height="20">
+            <Image File="../Assets/x.png" />
+        </Rectangle>
+    </Panel>
+    <StackPanel ZOffset="2" Alignment="Center" Width="100%">
+        <nav_list val="협의회 소개">
+            <Tapped Handler="{navigation.goIntro}"/>
+        </nav_list>
+         <nav_list val="공지사항">
+            <Tapped Handler="{navigation.goNotice}"/>
+        </nav_list>
+         <nav_list val="기업지원 소식">
+            <Tapped Handler="{navigation.goSupport}"/>
+        </nav_list>
+         <nav_list val="회원사 소개">
+            <Tapped Handler="{navigation.goCompany}"/>
+        </nav_list>
+         <nav_list val="일정">
+            <Tapped Handler="{navigation.goEvent}"/>
+        </nav_list>
+         <nav_list val="갤러리">
+            <Tapped Handler="{navigation.goGallery}"/>
+        </nav_list>
+    </StackPanel>
+    <StackPanel ZOffset="2" Orientation="Horizontal" Alignment="BottomRight" Padding="0, 0, 0, 0" Margin="0, 0, 27, 32"
+        ItemSpacing="14">
+        <Match Value="{info.u_id}">
+            <Case String="">
+                  <Clicked Handler="{navigation.goLogin}" />
+                <Text Font="NotoSemiBold" FontSize="18" Color="#2f2f2f" >LOG IN</Text>
+            </Case>
+            <Case IsDefault="true">
+                <StackPanel Orientation="Horizontal" Alignment="Center" ItemSpacing="5">
+                    <Circle Width="16" Height="16" Color="{color}" Alignment="Center" />
+                    <Text Font="NotoMedium" FontSize="18" Color="#2f2f2f" Alignment="Center">{info.u_id}</Text>
+                </StackPanel>
+                <Image Width="3" Height="20" File="../Assets/_.png" />
+                <StackPanel Orientation="Horizontal" Alignment="Center" ItemSpacing="5">
+                    <Clicked Handler="{logout}"/>
+                    <Image Width="19" Height="19" File="../Assets/logout.png" />
+                    <Text Font="NotoSemiBold" FontSize="18" Color="#2f2f2f" >LOG OUT</Text>
+                </StackPanel>
+            </Case>
+        </Match>
+    </StackPanel>
+
+    <Panel ux:Class="nav_list"  Height="59">
+        <Rectangle Layer="Background" Color="#FFFFFF" Opacity="0" />
+        <string ux:Property="val" />
+        <string ux:Property="callback" />
+        <WhileHovering>
+            <Change this.Color="#181F72" />
+            <Change text.Color="#FFFFFF" />
+        </WhileHovering>
+        <Text ux:Name="text" Alignment="Center" FontSize="20" Font="NotoMedium" Color="#2f2f2f" Value="{Property val}"></Text>
+    </Panel>
+</Panel>

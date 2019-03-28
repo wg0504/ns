@@ -4,15 +4,28 @@
         "Fuse.Maps",
         "Fuse",
         "FuseJS",
-        "Fuse.GeoLocation"
+        "Fuse.Charting",
+        "Fuse.Launcher"
     ],
-
+    "Android": {
+        "SDK": {
+            "BuildToolsVersion": "26.0.0",
+            "CompileVersion": 26,
+            "MinVersion": 21,
+            "TargetVersion": 26
+        }
+    },
+    "Mobile": {
+        "Orientations": "Portrait"
+    },
     "Includes": [
-    "*",
-        "**.js:FuseJS", 
+        "*",
+        "**.js:FuseJS",
         "*.jpg:Bundle",
         "Assets/*.png:Bundle",
         "Assets/*.jpg:Bundle",
-        "Assets/*.jpeg:Bundle"
+        "Assets/*.jpeg:Bundle",
+        "plugin/*.uno"
     ]
+
 }

@@ -1,15 +1,32 @@
-<App Model="MainView">
+<App Model="MainView" xmlns:c="Fuse.Charting">
 	<iOS.StatusBarConfig Style="Light" />
-	<Android.StatusBarConfig Color="#000000" />
-		<Navigator Pages="{navigation.pages}">
-		<Login ux:Template="Login"/>
-		<SignInfo ux:Template="SignInfo"/>
-		<Sign ux:Template="Sign"/>
+	<!-- <Android.StatusBarConfig Color="#000000" IsVisible="true"/>
+	<AndroidStatusBarHack IsLight="true"/>
+	<DockPanel>
+		<StatusBarBackground Dock="Top"/>
+	</DockPanel> -->
+
+	<Navigator Pages="{navigation.pages}">
+		<Login ux:Template="Login" />
+		<SignInfo ux:Template="SignInfo" />
+		<Sign ux:Template="Sign" />
+		<Main ux:Template="Main" />
+		<NoticePage ux:Template="NoticePage" />
+		<GalleryPage ux:Template="GalleryPage" />
+		<SupportPage ux:Template="SupportPage" />
+		<CompanyPage ux:Template="CompanyPage" />
+		<Company_int ux:Template="Company_int" />
+		<Splash ux:Template="Splash" />
+		<Introduction ux:Template="Introduction" />
 	</Navigator>
+	
 	<Font File="Font/Montserrat-Light.ttf" ux:Global="MonLight" />
 	<Font File="Font/Montserrat-Bold.ttf" ux:Global="MonBold" />
 	<Font File="Font/Montserrat-SemiBold.ttf" ux:Global="MonSemiBold" />
-	<Font File="Font/NotoSansKR-Regular.otf" ux:Global="NotoRegular" />
+
+	<Font File="Font/NotoSansKR-DemiLight.otf" ux:Global="NotoRegular" />
+	<Font File="Font/NotoSansKR-Medium.otf" ux:Global="NotoSemiBold" />
 	<Font File="Font/NotoSansKR-Bold.otf" ux:Global="NotoBold" />
-	<Font File="Font/NotoSansKR-Medium.otf" ux:Global="NotoMedium" />
+	<Font File="Font/NotoSansKR-Black.otf" ux:Global="NotoExtraBold" />
+	<Font File="Font/NotoSansKR-Regular.otf" ux:Global="NotoMedium" />
 </App>

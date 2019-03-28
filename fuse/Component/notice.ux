@@ -1,0 +1,19 @@
+<StackPanel ux:Class="notice" Margin="27, 0, 27, 0" ItemSpacing="4">
+    <Grid Row="1" Column="2" Margin="0, 0, 0, 5">
+        <Text Row="0" Column="0" FontSize="22" Color="#181f72" Font="NotoBold" Alignment="Default">공지사항</Text>
+        <StackPanel Row="0" Column="1" Orientation="Horizontal" Alignment="CenterRight">
+            <Clicked Handler="{navigation.goNotice}"/>
+            <Image Width="11" File="../Assets/+.png" Height="11" Color="Black" Alignment="Center" />
+            <Text Font="MonLight" FontSize="13" Color="Black"> ALL</Text>
+        </StackPanel>
+    </Grid>
+    <Grid Row="1" Column="2" Columns="7.5*,2.5*">
+        <Text Row="0" Column="0" Margin="9, 0, 0, 0" FontSize="15" Font="NotoRegular" Color="#000000">2019 신년회 </Text>
+        <Text Row="0" Column="1" Alignment="CenterRight" FontSize="13" Font="NotoRegular" Color="#898989"> 2018.12.25</Text>
+    </Grid>
+    <Grid Row="1" Column="2" Columns="7.5*,2.5*">
+        <Text Row="0" Column="0" Margin="9, 0, 0, 0" FontSize="15" Font="NotoRegular" Color="#000000">해외 연수 설명회 일정
+        </Text>
+        <Text Row="0" Column="1" Alignment="CenterRight" FontSize="13" Font="NotoRegular" Color="#898989">2018.12.18</Text>
+    </Grid>
+</StackPanel>

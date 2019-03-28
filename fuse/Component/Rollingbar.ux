@@ -1,0 +1,7 @@
+<Grid RowCount="0" ColumnCount="5" ux:Class="Rollingbar">
+    <Rectangle Height="2" Color="{ActiveIndex==0? '#181f72':'#979797'}"  />
+    <Rectangle Height="2" Color="{ActiveIndex==1? '#181f72':'#979797'}" />
+    <Rectangle Height="2" Color="{ActiveIndex==2? '#181f72':'#979797'}" />
+    <Rectangle Height="2" Color="{ActiveIndex==3? '#181f72':'#979797'}" />
+    <Rectangle Height="2" Color="{ActiveIndex==4? '#181f72':'#979797'}" />
+</Grid>

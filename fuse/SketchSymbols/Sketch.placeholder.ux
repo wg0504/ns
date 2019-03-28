@@ -1,5 +1,0 @@
-<Panel ux:Class="Sketch.placeholder" Width="20" Height="20">
-	<Image File="images/bf5ed4dbf3d90f241182a3d30c64552e29c5b9f9.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
-		<!-- placeholder-3 -->
-	</Image>
-</Panel>

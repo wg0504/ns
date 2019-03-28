@@ -1,5 +1,0 @@
-<Panel ux:Class="Sketch.settings" Width="23" Height="23">
-	<Image File="images/0ed36b4471cde162c30a6dd750f5148a31bf9bd9.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
-		<!-- settings -->
-	</Image>
-</Panel>

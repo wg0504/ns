@@ -1,5 +1,0 @@
-<Panel ux:Class="Sketch.phone_w" Width="18" Height="18">
-	<Image File="images/21bcabeb69e29621ef0a7f8b34f708d6058d2b75.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
-		<!-- phone-call -->
-	</Image>
-</Panel>

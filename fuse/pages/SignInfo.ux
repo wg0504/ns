@@ -1,28 +1,44 @@
-<ClientPanel ux:Class="SignInfo">
-    <DockPanel Padding="27, 0, 27, 0">
-        <Header Dock="Top" Margin="0, 68, 0, 0" />
-
-        <Panel Padding="0, 18, 0, 34">
-            <NativeViewHost>
-                <WebView Dock="Fill" Url="http://www.google.com">
-                    <PageLoaded>
-                        <EvaluateJS Handler="{onPageLoaded}">
-                            var result = {
-                                url : document.location.href
-                            };
-                            return result;
-                        </EvaluateJS>
-                    </PageLoaded>
-                </WebView>
-            </NativeViewHost>
-        </Panel>
-
-        <StackPanel Dock="Bottom" Orientation="Horizontal" Alignment="CenterRight" Height="25" Margin="0, 0, 0, 48">
-            <Clicked Handler="{navigation.goSign}" />
-            <Text Color="#181f72" Font="MonSemiBold" FontSize="25" TextAlignment="Right" Alignment="Center">NEXT</Text>
-            <Image Color="#181f72" File="../Assets/Arrow.png" Alignment="Center">
-                <Rotation Degrees="90" />
-            </Image>
+<ClientPanel ux:Class="SignInfo" ux:Name="page">
+    <Header Dock="Top" Margin="27, 68, 27, 18" />
+    <ScrollView Dock="Fill" Padding="27, 0, 27, 0" SnapMinTransform="False" SnapMaxTransform="False" Alignment="Top">
+        <StackPanel Margin="0,0,0,0">
+            <Text Margin="0,0,0,8" FontSize="17" Color="Black" Font="NotoMedium" Value="-회원가입약관-" />
+            <Rectangle Color="#f7f7f7" Margin="0,0,0,12" Padding="11">
+                <ScrollView Height="200">
+                    <StackPanel>
+                        <Text Value="논산시기업인협의회 규약" FontSize="11" Font="NotoBold" />
+                        <Text FontSize="11" Font="NotoRegular" TextWrapping="Wrap">
+                            {text}
+                        </Text>
+                    </StackPanel>
+                </ScrollView>
+            </Rectangle>
+            <StackPanel Orientation="Horizontal" ItemSpacing="6"  Margin="0,0,0,12" Alignment="Right">
+                <Checkbox Width="20" Height="20" Value="{check_one}" />
+                <Text Font="NotoSemiBold" Color="#2f2f2f" FontSize="13" Value="회원가입약관의 내용에 동의합니다." />
+            </StackPanel>
+            <Text Margin="0,0,0,8" FontSize="17" Color="Black" Font="NotoMedium" Value="-개인정보처리방침안내-" />
+            <Rectangle Color="#f7f7f7" Margin="0,0,0,12" Padding="11">
+                <ScrollView Height="200">
+                    <StackPanel>
+                        <Text Value="개인정보보호정책" FontSize="11" Font="NotoBold" />
+                        <Text FontSize="11" Font="NotoRegular" TextWrapping="Wrap">
+                            {text2}
+                        </Text>
+                    </StackPanel>
+                </ScrollView>
+            </Rectangle>
+            <StackPanel Orientation="Horizontal" ItemSpacing="6"  Margin="0,0,0,12" Alignment="Right">
+                <Checkbox Width="20" Height="20" Value="{check_two}" />
+                <Text Font="NotoSemiBold" Color="#2f2f2f" FontSize="13" Value="개인정보처리방침안내의 내용에 동의합니다." />
+            </StackPanel>
         </StackPanel>
-    </DockPanel>
+    </ScrollView>
+    <StackPanel ux:Name="stack" Dock="Bottom" Orientation="Horizontal" Alignment="BottomRight" Height="25" Margin="27, 10, 27, 25">
+        <Clicked Handler="{check}" />
+        <Text Color="#181f72" Font="MonSemiBold" FontSize="25" TextAlignment="Right" Alignment="Center">NEXT</Text>
+        <Image Color="#181f72" File="../Assets/Arrow.png" Alignment="Center">
+            <Rotation Degrees="90" />
+        </Image>
+    </StackPanel>
 </ClientPanel>

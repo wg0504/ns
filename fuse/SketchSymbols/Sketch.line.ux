@@ -1,9 +1,0 @@
-<Panel ux:Class="Sketch.line" Width="44" Height="69">
-	<Panel Width="100%" Height="63.76812%" Alignment="TopLeft" Margin="0">
-		<!-- Oval 6 Copy -->
-		<Path Data="M 0.5 1 C 0.7761423749 1 1 0.7761423749 1 0.5 C 1 0.2238576251 0.7761423749 0 0.5 0 C 0.2238576251 0 0 0.2238576251 0 0.5 C 0 0.7761423749 0.2238576251 1 0.5 1" StretchMode="Fill" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
-			<!-- Path -->
-			<SolidColor Color="0.1473948, 0.8873831, 0, 1" />
-		</Path>
-	</Panel>
-</Panel>

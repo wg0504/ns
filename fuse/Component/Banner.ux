@@ -1,0 +1,51 @@
+<StackPanel ux:Class="Banner" ItemSpacing="17">
+    <Text FontSize="22" Color="#181f72" Font="MonSemiBold" Margin="27, 0, 0,0">NS-Business</Text>
+    <Image File="../Assets/MainBanner.png" />
+    <StackPanel>
+        <Text FontSize="20" Color="#000000" Margin="27, 0, 0, 0" Font="NotoMedium">가장 가까운 곳에서</Text>
+        <Grid RowCount="1" ColumnCount="2" Columns="7*,3*" Margin="27, 0, 27, 0">
+            <Text Row="0" Column="0" FontSize="20" Color="#000000" Font="NotoMedium">가장 큰 힘이 되겠습니다.</Text>
+            <StackPanel Color="#FFFFFF" Row="0" Column="1">
+                <Clicked Handler="{navigation.goIntro}"/>
+                <Text FontSize="13" Color="#4a90e2" Alignment="Center" Font="NotoMedium">협의회 소개</Text>
+                <Rectangle Width="68" Height="3" Color="#4a90e2" Alignment="Center">
+                    <SolidColor Color="#4a90e2" />
+                    <Stroke Width="2" Color="#4a90e2" />
+                </Rectangle>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+    <Panel ux:Class="Card" Padding="27, 0, 27, 0">
+        <ActivatingAnimation>
+            <Change this.Opacity="1" Duration="0.5" />
+            <Change texts.Opacity="1" Duration="0.25" />
+        </ActivatingAnimation>
+        <EnteringAnimation Scale="0.5">
+            <Move X="-1.78" RelativeTo="ParentSize" Duration="0.5" />
+        </EnteringAnimation>
+        <ExitingAnimation Scale="0.5">
+            <Move X="1.78" RelativeTo="ParentSize" Duration="0.5" />
+        </ExitingAnimation>
+        <StackPanel ItemSpacing="19">
+            <Image Url="{Url}" />
+            <StackPanel ItemSpacing="5" ux:Name="texts" Opacity="0" Margin="2, 0, 2, 0">
+                <Text Font="NotoRegular" FontSize="15" Color="#2f2f2f" >하이</Text>
+                <Grid ColumnCount="2" RowCount="1" Columns="7*,3*">
+                    <Panel Row="0" Column="0">
+                        <Text Font="NotoRegular" FontSize="13" Color="#898989" >2019.01.11 PM 12:23</Text>
+                    </Panel>
+                    <StackPanel  Orientation="Horizontal" Alignment="CenterRight" ItemSpacing="11">
+                        <StackPanel ItemSpacing="1" Orientation="Horizontal">
+                            <Image Width="15" Height="15" File="../Assets/eye.png" />
+                            <Text Font="NotoRegular" FontSize="13" Color="#898989" Alignment="Center">33</Text>
+                        </StackPanel>
+                        <StackPanel ItemSpacing="1" Orientation="Horizontal">
+                            <Image Width="15" Height="15" File="../Assets/chat.png" />
+                            <Text Font="NotoRegular" FontSize="13" Color="#898989" Alignment="Center">6</Text>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Panel>
+</StackPanel>

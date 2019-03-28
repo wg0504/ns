@@ -1,0 +1,19 @@
+<Rectangle ux:Class="Filter_box" Width="105" Height="70" CornerRadius="18" Color="#FFFFFF" HitTestMode="LocalBounds">
+    <string ux:Property="text" />
+    <string ux:Property="ID" />
+    <Selectable Value="{ReadProperty ID}" />
+    <WhileSelected>
+        <Change stroke.Color="#181f72" Duration="0.2" />
+        <Callback Handler="{filter_select}" />
+    </WhileSelected>
+    <Clicked>
+        <ToggleSelection />
+    </Clicked>
+    <Panel Width="100%" Padding="10, 0, 10, 0">
+        <Text Font="NotoBold" FontSize="16" Color="#000000" Alignment="Center" TextWrapping="Wrap" Value="{Property             text}" TextAlignment="Center" />
+    </Panel>
+    <Rectangle Color="#FFFFFF" Opacity="0.6" CornerRadius="18">
+        <Shadow Angle="143" Color="#000" />
+    </Rectangle>
+    <Stroke ux:Name="stroke" Color="#ffffff" Alignment="Outside" Width="1.9" />
+</Rectangle>

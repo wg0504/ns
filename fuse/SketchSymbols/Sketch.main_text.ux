@@ -1,6 +1,0 @@
-<Panel ux:Class="Sketch.main_text" Width="194" Height="55">
-	<Text Color="0, 0, 0, 1" FontSize="20" Value="가장 가까운 곳에서
-가장 큰 힘이 되겠습니다." TextTruncation="None" TextWrapping="Wrap" TextAlignment="Left" Width="100%" Height="100%" Alignment="BottomLeft" Margin="0">
-		<!-- 가장 가까운 곳에서 가장 큰 힘이 되 -->
-	</Text>
-</Panel>

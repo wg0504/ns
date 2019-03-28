@@ -1,0 +1,64 @@
+<StackPanel ux:Class="Company_info">
+    <string ux:Property="text" />
+    <string ux:Property="text2" />
+    <string ux:Property="value" />
+    <string ux:Property="value2" />
+    <string ux:Property="cir_vis" />
+    <DockPanel Height="370">
+        <Match Value="{i_image}">
+            <Case String="">
+                <Rectangle Layer="Background" Color="#000000" Opacity="0.8" />
+            </Case>
+            <Case IsDefault="true">
+                <Rectangle Layer="Background" Color="#000000" Opacity="0.6" />
+                <Image Url="{com_info.i_image}" StretchMode="Fill" Layer="Background" Opacity="0.8" />
+            </Case>
+        </Match>
+
+        <Company_dock Dock="Top" />
+        <StackPanel Margin="27,0,27,0">
+            <StackPanel Orientation="Horizontal" ItemSpacing="10">
+                <Text Font="NotoRegular" FontSize="14" Value="{Property text}" Alignment="Center" Color="#FFFFFF" />
+                <Text Font="NotoBold" FontSize="23" Value="{Property value}" Color="#FFFFFF" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" ItemSpacing="10">
+                <Text Font="NotoRegular" FontSize="14" Value="{Property text2}" Alignment="Center" Color="#FFFFFF" />
+                <Text Font="NotoBold" FontSize="23" Value="{Property value2}" Color="#FFFFFF" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Alignment="BottomRight" Margin="27,0,27,36" ItemSpacing="9">
+            <Text Font="NotoBold" FontSize="25" Value="{com_info.i_name}" Color="#FFFFFF" TextAlignment="Right" />
+            <StackPanel Orientation="Horizontal" Alignment="CenterRight" ItemSpacing="7">
+                <Circle Color="{cir_color}" Width="18" Visibility="{Property cir_vis}" />
+                <Text Font="NotoRegular" FontSize="15" Value="{com_info.u_name}" Color="#FFFFFF" />
+            </StackPanel>
+        </StackPanel>
+
+    </DockPanel>
+    <StackPanel Color="#f7f7f7" Padding="20,27,20,27">
+        <StackPanel Orientation="Horizontal" ItemSpacing="10">
+            <Text Value="장소" Font="NotoRegular" FontSize="15" Color="#4a4a4a" />
+            <Text Value="{com_info.i_addr}" Font="NotoRegular" FontSize="15" Color="#4a4a4a" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" ItemSpacing="10">
+            <Text Value="번호" Font="NotoRegular" FontSize="15" Color="#4a4a4a" />
+            <Text Value="{com_info.i_phoen}" Font="NotoRegular" FontSize="15" Color="#4a4a4a" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" ItemSpacing="10">
+            <Text Value="연결" Font="NotoRegular" FontSize="15" Color="#4a4a4a" />
+            <Panel Alignment="CenterLeft">
+                <Clicked Handler="{link}">
+                    <Change tx.Color="#4a4a4a" Duration="0.2" />
+                    <Change rec.Color="#4a4a4a" Duration="0.2" />
+                </Clicked>
+                <Text ux:Name="tx" Value="{com_info.i_url}" Font="NotoRegular" FontSize="15" Color="#181f72" Alignment="Default" />
+                <Rectangle ux:Name="rec" Height="1" Margin="0,0,0,5" Alignment="Bottom" Color="#181f72" Opacity="1" />
+            </Panel>
+        </StackPanel>
+
+    </StackPanel>
+    <StackPanel ux:Name="intro" Padding="27,30,27,30" ItemSpacing="28">
+        <Text Font="NotoBold" FontSize="20" Color="#2f2f2f" Value="{com_info.i_slogan}" TextWrapping="Wrap" />
+        <Text Font="NotoRegular" FontSize="15" Color="#2f2f2f" Value="{text}" TextWrapping="Wrap" />
+    </StackPanel>
+</StackPanel>

@@ -1,0 +1,16 @@
+<StackPanel ux:Class="Gallery" ItemSpacing="17">
+<Grid Row="1" Column="2" Margin="27, 0, 27, 5">
+        <Text Row="0" Column="0" FontSize="22" Color="#181f72" Font="NotoBold" Alignment="Default">갤러리</Text>
+        <StackPanel Row="0" Column="1" Orientation="Horizontal" Alignment="CenterRight">
+            <Clicked Handler="{navigation.goGallery}" />
+            <Image Width="11" File="../Assets/+.png" Height="11" Color="#E6E6E6" Alignment="Center" />
+            <Text Font="MonLight" FontSize="13" Color="Black"> ALL</Text>
+        </StackPanel>
+    </Grid>
+    <PageControl InactiveState="Unchanged" Transition="None" ActiveIndex="{ActiveIndex}">
+        <Each Items="{Item}">
+            <Card />
+        </Each>
+    </PageControl>
+    <Rollingbar Padding="27, 0, 27, 0" />
+</StackPanel>

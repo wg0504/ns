@@ -1,0 +1,80 @@
+<ClientPanel ux:Class="Company_int">
+    <Panel ux:Name="back" Layer="Background" Height="100%" Color="#FFFFFF" />
+    <ScrollView ux:Name="scroll" SnapMaxTransform="False">
+        <StackPanel>
+            <Company_info ux:Name="info" text="직원" text2="역사" value="{value}" value2="{value2}" />
+            <Panel Color="#f7f7f7">
+                <StackPanel>
+                    <Selection ux:Name="selection" MaxCount="1" MinCount="0" />
+                    <Company_his ID="1" />
+
+                    <Company_pro ID="2" />
+
+                    <!-- <Company_stat ID="3" /> -->
+                </StackPanel>
+            </Panel>
+        </StackPanel>
+    </ScrollView>
+
+    <StackPanel ux:InnerClass="Company_his">
+        <string ux:Property="ID" />
+        <Selectable Value="{ReadProperty ID}" />
+        <WhileSelected>
+            <Change target.Visibility="Visible" />
+            <Change history.Visibility="Collapsed" />
+            <Change scroll.ScrollPosition="height(info)" />
+        </WhileSelected>
+        <gray_bar ux:Name="history" text="연혁" />
+        <StackPanel ux:Name="target" MinHeight="height(back)" Background="#FFFFFF" Padding="27,27,27,27"
+            ItemSpacing="14" Visibility="Collapsed">
+            <name_tag text="연혁">
+                <Clicked>
+                    <ToggleSelection />
+                </Clicked>
+            </name_tag>
+            <ScrollView AllowedScrollDirections="Horizontal">
+                <StackPanel Orientation="Horizontal" ItemSpacing="23">
+                    <Text Value="2019" />
+                    <Text Value="2018" />
+                    <Text Value="2017" />
+                </StackPanel>
+            </ScrollView>
+            <StackPanel Orientation="Horizontal" ItemSpacing="23">
+                <StackPanel>
+                    <Text Value="2019" Alignment="Default" />
+                </StackPanel>
+                <StackPanel>
+                    <Each Count="11">
+                        <StackPanel>
+                            <Text Value="6월 22일" />
+                            <Text Value="논산기업인 협희외 6월 월례회의" TextWrapping="Wrap" />
+                            <Text />
+                        </StackPanel>
+                    </Each>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+
+    <StackPanel ux:InnerClass="Company_pro">
+        <string ux:Property="ID" />
+        <Selectable Value="{ReadProperty ID}" />
+        <WhileSelected>
+            <Change target.Visibility="Visible" />
+            <Change gray_bar.Visibility="Collapsed" />
+            <Change scroll.ScrollPosition="height(info)+64" />
+        </WhileSelected>
+        <gray_bar ux:Name="gray_bar" text="대표제품" />
+        <StackPanel ux:Name="target" MinHeight="height(back)" Background="#FFFFFF" Padding="27,27,27,27"
+            ItemSpacing="14" Visibility="Collapsed">
+            <name_tag text="대표제품">
+                <Clicked>
+                    <ToggleSelection />
+                </Clicked>
+            </name_tag>
+            <Text FontSize="15" Font="NotoBold" Color="#181f72"  Value="{com_info.i_product}"/>
+            <Image Url="{com_info.i_productimage}"/>
+        </StackPanel>
+    </StackPanel>
+
+</ClientPanel>

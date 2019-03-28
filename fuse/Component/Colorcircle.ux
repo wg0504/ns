@@ -14,5 +14,5 @@
             <ToggleSelection />
         </Clicked>
     </Circle>
-    <Text TextWrapping="Wrap" FontSize="12" Font="NotoRegular" Alignment="Center">{Property text}</Text>
+    <Text TextWrapping="Wrap" FontSize="12" Font="NotoRegular" Alignment="Center" TextAlignment="Center">{Property text}</Text>
 </StackPanel>

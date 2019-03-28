@@ -1,0 +1,26 @@
+<ClientPanel ux:Class="CompanyPage">
+    <MameberNav Dock="Top" color2="#000000" />
+    <ScrollView Margin="0, 0, 0, 0">
+        <StackPanel>
+            <Text FontSize="22" Color="#181f72" Font="NotoBold" Margin="27, 0, 0, 10">산업별 필터</Text>
+            <ScrollView AllowedScrollDirections="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="36" />
+                    <Each Items="{filter}">
+                        <Selection MaxCount="1" MinCount="1" Value="{filter_value}"/>
+                        <Filter_box ID="{id}" text="{text}" Margin="10, 26, 0, 86" />
+                    </Each>
+                    <Rectangle Width="36" />
+                </StackPanel>
+            </ScrollView>
+            <Grid RowCount="1" ColumnCount="2" Margin="27, 0, 27, 0">
+                <Text Row="0" Column="0" FontSize="22" Color="#181f72" Font="NotoBold" Alignment="BottomLeft">멤버 목록</Text>
+                <Text Row="0" Column="1" FontSize="15" Color="#9b9b9b" Font="NotoMedium" Alignment="BottomRight">총 {count}명</Text>
+            </Grid>
+            <Each Items="{list}">
+                <Company_box Company="{i_name}" Name="{u_name}" Margin="27,0,27,0" />
+            </Each>
+        </StackPanel>
+    </ScrollView>
+ 
+</ClientPanel>

@@ -1,0 +1,20 @@
+<Panel ux:Class="Company_dock">
+    <Grid RowCount="1" ColumnCount="3" Columns="19*,3*,3*" Margin="27, 26, 27, 22">
+        <Rectangle Width="30" Height="30" Row="0" Column="0" Alignment="CenterLeft"  >
+            <Clicked Handler="{navigation.goBack}"/>
+            <Image File="../Assets/before.png" Width="9" Height="18"  Color="#FFFFFF" />
+        </Rectangle>
+        <Rectangle Width="30" Height="30" Row="0" Column="1" Alignment="CenterRight" >
+            <Clicked Handler="{navigation.goMain}"/>
+            <Rectangle  Width="22" Height="22">
+                <Image File="../Assets/Phone.png" StretchMode="Fill" Alignment="CenterRight" />
+            </Rectangle>
+        </Rectangle>
+        <Rectangle Width="30" Height="30" Row="0" Column="2" Alignment="CenterRight"  >
+            <Rectangle  Width="24" Height="24">
+                <Image File="../Assets/Share.png" StretchMode="Fill" Alignment="CenterRight" />
+            </Rectangle>
+        </Rectangle>
+
+    </Grid>
+</Panel>

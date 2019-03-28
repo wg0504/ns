@@ -1,0 +1,7 @@
+<Rectangle ux:Class="Navicon" Width="30" Height="30">
+    <StackPanel ItemSpacing="3" Alignment="Center">
+        <Rectangle Alignment="Left" Width="18" Height="3" Color="#181f72" CornerRadius="1.5" />
+        <Rectangle Alignment="Left" Width="14" Height="3" Color="#181f72" CornerRadius="1.5" />
+        <Rectangle Alignment="Left" Width="18" Height="3" Color="#181f72" CornerRadius="1.5" />
+    </StackPanel>
+</Rectangle>

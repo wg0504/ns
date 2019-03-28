@@ -1,0 +1,161 @@
+<ClientPanel ux:Class="Introduction">
+    <Panel ux:Name="back" Layer="Background" Height="100%" Color="#FFFFFF" />
+    <ScrollView ux:Name="scroll" SnapMaxTransform="False">
+        <StackPanel>
+            <Company_info ux:Name="info" text="멤버" text2="역사" value="{value}" value2="{value2}" cir_vis="Collapsed"/>
+            <Panel Color="#f7f7f7">
+                <StackPanel>
+                    <Selection ux:Name="selection" MaxCount="1" MinCount="0" />
+                    <Intro_his ID="1" />
+
+                    <Intro_mis ID="2" />
+
+                    <Intro_stat ID="3" />
+                </StackPanel>
+            </Panel>
+        </StackPanel>
+    </ScrollView>
+
+    <StackPanel ux:InnerClass="Intro_his">
+        <string ux:Property="ID" />
+        <Selectable Value="{ReadProperty ID}" />
+        <WhileSelected>
+            <Change target.Visibility="Visible" />
+            <Change history.Visibility="Collapsed" />
+            <Change scroll.ScrollPosition="height(info)" />
+        </WhileSelected>
+        <gray_bar ux:Name="history" text="연혁" />
+        <StackPanel ux:Name="target" MinHeight="height(back)" Background="#FFFFFF" Padding="27,27,27,27"
+            ItemSpacing="14" Visibility="Collapsed">
+            <name_tag text="연혁">
+                <Clicked>
+                    <ToggleSelection />
+                </Clicked>
+            </name_tag>
+            <ScrollView AllowedScrollDirections="Horizontal">
+                <StackPanel Orientation="Horizontal" ItemSpacing="23">
+                    <Text Value="2019" />
+                    <Text Value="2018" />
+                    <Text Value="2017" />
+                </StackPanel>
+            </ScrollView>
+            <StackPanel Orientation="Horizontal" ItemSpacing="23">
+                <StackPanel>
+                    <Text Value="2019" Alignment="Default" />
+                </StackPanel>
+                <StackPanel>
+                    <Each Count="11">
+                        <StackPanel>
+                            <Text Value="6월 22일" />
+                            <Text Value="논산기업인 협희외 6월 월례회의" TextWrapping="Wrap" />
+                            <Text />
+                        </StackPanel>
+                    </Each>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+
+
+    <StackPanel ux:InnerClass="Intro_mis">
+        <string ux:Property="ID" />
+        <Selectable Value="{ReadProperty ID}" />
+        <WhileSelected>
+            <Change target.Visibility="Visible" />
+            <Change gray_bar.Visibility="Collapsed" />
+            <Change scroll.ScrollPosition="height(info)+64" />
+        </WhileSelected>
+        <gray_bar ux:Name="gray_bar" text="사명" />
+        <StackPanel ux:Name="target" MinHeight="height(back)" Background="#FFFFFF" Padding="27,27,27,27"
+            ItemSpacing="14" Visibility="Collapsed">
+            <name_tag text="사명">
+                <Clicked>
+                    <ToggleSelection />
+                </Clicked>
+            </name_tag>
+            <Text Font="NotoBold" FontSize="20" Value="논산시 지역 경제에 기본이 되는 논산 기업인 협의회는" Color="#181f72"
+                TextWrapping="Wrap" />
+            <Image Width="100%" File="../Assets/Company_img.png" />
+            <Text Margin="5" Font="NotoRegular" FontSize="15" Value="{mission}" TextWrapping="Wrap" LineSpacing="5"
+                Color="#000000" Alignment="CenterLeft" />
+            <StackPanel Margin="5,0,5,0">
+                <StackPanel Orientation="Horizontal">
+                    <Text Font="NotoRegular" FontSize="15" Color="#000000" Value="뒷바침해서 사업에는" />
+                    <Text Font="NotoBold" FontSize="15" Color="#000000" Value=" 안정과 수익성" />
+                    <Text Font="NotoRegular" FontSize="15" Color="#000000" Value="을," />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Text Font="NotoRegular" FontSize="15" Color="#000000" Value="기업 상호간에는" />
+                    <Text Font="NotoBold" FontSize="15" Color="#000000" Value=" 친목" />
+                    <Text Font="NotoRegular" FontSize="15" Color="#000000" Value="을 도모합니다." />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+
+    <StackPanel ux:InnerClass="Intro_stat" xmlns:c="Fuse.Charting">
+        <string ux:Property="ID" />
+        <Selectable Value="{ReadProperty ID}" />
+        <WhileSelected>
+            <Change target.Visibility="Visible" />
+            <Change gray_bar.Visibility="Collapsed" />
+            <Change scroll.ScrollPosition="height(info)+128" />
+        </WhileSelected>
+        <gray_bar ux:Name="gray_bar" text="회원사 통계" />
+        <StackPanel ux:Name="target" Background="#FFFFFF" Padding="27,27,27,27"
+            Visibility="Collapsed">
+            <name_tag text="회원사 통계">
+                <Clicked>
+                    <ToggleSelection />
+                </Clicked>
+            </name_tag>
+            <c:Plot Margin="0,30,0,30">
+                <c:DataSeries Data="{data1}" />
+                <Panel BoxSizing="FillAspect" Margin="27, 0, 27, 0" Opacity="0.9">
+                    <VectorLayer HitTestMode="None">
+                        <c:PlotData>
+                            <c:PlotWedge Color="{Plot data.object}.color" StrokeColor="#FFF" StrokeWidth="4" />
+                        </c:PlotData>
+                    </VectorLayer>
+                </Panel>
+                <Circle Width="40%" Color="#FFFFFF" ZOffset="2" />
+            </c:Plot>
+            <Grid ux:Name="grid" RowCount="4" ColumnCount="2" CellSpacing="10">
+                <Each Items="{data1}">
+                    <Rectangle Color="#f7f7f7" CornerRadius="11">
+                        <Grid RowCount="1" ColumnCount="2" Columns="1*,2.5*">
+                            <Circle Width="25" Height="25" Color="{color}" Alignment="Center" />
+                            <StackPanel Margin="0,20,0,20" Alignment="CenterLeft">
+                                <Text Font="NotoMedium" FontSize="13" Value="{label}" TextWrapping="Wrap" Alignment="Default" />
+
+                                <Text Font="NotoMedium" FontSize="13" Value="23/107   (20%)" Alignment="CenterLeft" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Grid>
+                    </Rectangle>
+                </Each>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+
+
+    <Panel ux:Class="name_tag">
+        <string ux:Property="text" />
+        <Rectangle Color="#181f72" Height="3" Width="33" Alignment="TopLeft" />
+        <Grid RowCount="1" ColumnCount="2" Margin="0, 7, 0, 0" Color="#FFFFFF">
+            <Text Row="0" Column="0" Font="NotoBold" FontSize="18" Color="#565656" Value="{Property text}" />
+            <Image Row="0" Column="1" Width="10" File="../Assets/Down.png" Alignment="CenterRight">
+                <Rotation Degrees="180" />
+            </Image>
+        </Grid>
+    </Panel>
+
+    <Grid ux:Class="gray_bar" RowCount="1" ColumnCount="2" Height="64" Color="#f7f7f7" Padding="27,17,27,17">
+        <string ux:Property="text" />
+        <Clicked>
+            <ToggleSelection />
+        </Clicked>
+        <Text Row="0" Column="0" Font="NotoMedium" FontSize="18" Color="#2f2f2f" Value="{Property text}" />
+        <Image Row="0" Column="1" Width="10" File="../Assets/Down.png" Alignment="CenterRight" />
+    </Grid>
+
+</ClientPanel>

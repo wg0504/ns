@@ -1,32 +1,38 @@
-<ClientPanel ux:Class="Sign">
+<ClientPanel ux:Class="Sign" Background="#FFFFFF">
     <DockPanel Padding="27, 0, 27, 0">
         <Header Dock="Top" Margin="0, 68, 0, 0" />
-        <Panel Padding="9, 18, 9, 34">
+        <Panel Padding="9, 18, 9, 30">
             <ScrollView SnapMinTransform="False" SnapMaxTransform="False">
                 <StackPanel ItemSpacing="15">
-                    <Inputbox text="아이디" warning="영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력하세요." />
-                    <Inputbox text="비밀번호" />
-                    <Inputbox text="비밀번호 확인" />
-                    <Inputbox text="이름" />
-                    <Inputbox text="닉네임" warning="공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상)" />
-                    <Inputbox text="E-mail" />
-                    <StackPanel Width="100%" Height="80" ItemSpacing="19">
-                        <Text FontSize="18" Font="NotoMedium" Color="#000000">메일링 서비스</Text>
+                    <Inputbox text="아이디" value="{user.u_id}" warning="영문, 숫자만 입력 가능. 최소 3자 최대 20자."
+                        err="{id_err}" err_vis="{ {checklist.id_chk} == true? 'Visible':'Collapsed'}" />
+                    <Inputbox text="비밀번호" value="{user.u_pw}" warning="모든 문자 입력 가능. 최소 7자 최대 14자. " err=""
+                        err_vis="{ {checklist.pw_chk} == true? 'Visible':'Collapsed'}" type="Password" />
+                    <Inputbox text="비밀번호 확인" value="{user.u_cpw}" err="비밀번호가 일치하지 않습니다."
+                        err_vis="{ {checklist.cpw_chk} == true? 'Visible':'Collapsed'}" type="Password" />
+                    <Inputbox text="이름" value="{user.u_name}"
+                        err_vis="{ {checklist.name_chk} == true? 'Visible':'Collapsed'}" />
+                    <Inputbox text="E-mail" value="{user.u_email}" err="{email_err}"
+                        err_vis="{ {checklist.email_chk} == true? 'Visible':'Collapsed'}" type="Email" />
+                    <StackPanel Width="100%" Height="80" ItemSpacing="17">
+                        <Text FontSize="18" Font="NotoBold" Color="#000000">메일링 서비스</Text>
                         <Grid RowCount="1" ColumnCount="2" Columns="1*,9*" CellSpacing="7">
-                            <Checkbox Row="0" Column="0" Width="20" Height="20" />
-                            <Text Alignment="CenterLeft" Row="0" Column="1" TextWrapping="Wrap" FontSize="15">정보 메일을 받겠습니다.</Text>
+                            <Checkbox Row="0" Column="0" Width="20" Height="20" Value="{user.u_emailchk}" />
+                            <Text Font="NotoMedium" Color="#2f2f2f" Alignment="CenterLeft" Row="0" Column="1"
+                                TextWrapping="Wrap" FontSize="15" Value="정보 메일을 받겠습니다." />
                         </Grid>
                     </StackPanel>
-                    <StackPanel Width="100%" Height="80" ItemSpacing="19">
-                        <Text FontSize="18" Font="NotoMedium" Color="#000000">정보 공개</Text>
+                    <StackPanel Width="100%" Height="80" ItemSpacing="17">
+                        <Text FontSize="18" Font="NotoBold" Color="#000000">정보 공개</Text>
                         <Grid RowCount="1" ColumnCount="2" Columns="1*,9*" CellSpacing="7">
-                            <Checkbox Row="0" Column="0" Width="20" Height="20" />
-                            <Text Alignment="CenterLeft" Row="0" Column="1" TextWrapping="Wrap" FontSize="15">다른분들이 나의 정보를 볼 수 있도록 합니다.</Text>
+                            <Checkbox Row="0" Column="0" Width="20" Height="20" Value="{user.u_infochk}" />
+                            <Text Font="NotoMedium" Color="#2f2f2f" Alignment="CenterLeft" Row="0" Column="1"
+                                TextWrapping="Wrap" FontSize="15" Value="다른분들이 나의 정보를 볼 수 있도록 합니다." />
                         </Grid>
                     </StackPanel>
-                    <Rectangle Height="44" />
-                    <StackPanel ItemSpacing="20">
-                        <Selection MaxCount="1" MinCount="1" />
+                    <Text FontSize="18" Font="NotoBold" Color="#000000" Value="산업 종류" Margin="0,10,0,10"/>
+                    <StackPanel ItemSpacing="16">
+                        <Selection MaxCount="1" MinCount="1" Value="{user.u_industry}" />
                         <Grid RowCount="1" ColumnCount="4">
                             <Colorcircle Row="0" Column="0" color="#fb1e1e" text="제조·생산·화학업" ID="1" />
                             <Colorcircle Row="0" Column="1" color="#ffa511" text="건설업" ID="2" />
@@ -34,21 +40,24 @@
                             <Colorcircle Row="0" Column="3" color="#35cd18" text="기관·협회" ID="4" />
                         </Grid>
                         <Grid RowCount="1" ColumnCount="4">
-                            <Colorcircle Row="0" Column="0" color="#0039ff" text="서비스업"  ID="5" />
+                            <Colorcircle Row="0" Column="0" color="#0039ff" text="서비스업" ID="5" />
                             <Colorcircle Row="0" Column="1" color="#0e1455" text="미디어·광고업" ID="6" />
                             <Colorcircle Row="0" Column="2" color="#7016d0" text="기타" ID="7" />
                         </Grid>
                     </StackPanel>
+
                 </StackPanel>
             </ScrollView>
         </Panel>
-
-        <StackPanel Dock="Bottom" Orientation="Horizontal" Alignment="CenterRight" Height="25" Margin="0, 0, 0, 48">
-            <Clicked Handler="{navigation.goSign}" />
-            <Text Color="#181f72" Font="MonSemiBold" FontSize="25" TextAlignment="Right" Alignment="Center">NEXT</Text>
-            <Image Color="#181f72" File="../Assets/Arrow.png" Alignment="Center">
-                <Rotation Degrees="90" />
-            </Image>
-        </StackPanel>
+        <Rectangle Dock="Bottom" Width="141" Height="47" Color="#181f72" Alignment="BottomRight" CornerRadius="23.5"
+            Margin="0, 0, 0, 37">
+            <Clicked Handler="{onSubmit}" />
+            <StackPanel Alignment="Center" Orientation="Horizontal" ItemSpacing="6">
+                <Image Width="17" Height="17" Color="#FFFFFF" File="../Assets/MarkV.png" />
+                <Text Color="#FFFFFF" Font="NotoMedium" FontSize="20" Alignment="Center">가입 완료</Text>
+            </StackPanel>
+        </Rectangle>
     </DockPanel>
 </ClientPanel>
+
+<!-- <Inputbox text="닉네임" value="{user.u_nick}" warning="한글, 영문, 숫자만 입력 가능. 최소 4자이상 입력하세요." /> -->

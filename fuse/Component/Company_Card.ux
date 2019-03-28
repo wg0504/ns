@@ -1,0 +1,45 @@
+<Rectangle ux:Class="Company_card" Padding="0, 24, 0, 0">
+    <string ux:Property="i_name" />
+    <string ux:Property="i_comment" />
+    <string ux:Property="u_name" />
+    <string ux:Property="i_phone" />
+    <string ux:Property="i_addr" />
+    <ActivatingAnimation>
+        <Callback Handler="{change_item}" />
+        <Change this.Opacity="1" Duration="0.5" />
+        <Change bottomPanelScaling.Y="1" Duration="0.5" />
+        <Change bottomPanelScaling.X="1" Duration="0.5" />
+        <Change bottomPanel.Opacity="1" Duration="0.5" />
+        <Change bottomPanel.Y="20%" Duration="0.5" />
+    </ActivatingAnimation>
+    <EnteringAnimation Scale="0.5">
+        <Move X="-1.25" RelativeTo="ParentSize" Duration="0.5" />
+    </EnteringAnimation>
+    <ExitingAnimation Scale="0.5">
+        <Move X="1.25" RelativeTo="ParentSize" Duration="0.5" />
+    </ExitingAnimation>
+    <Rectangle ux:Name="topPanel" Width="56.3%" Height="46.4%" Color="#828282" Alignment="TopCenter">
+        <Stroke Width="1" Color="#828282" />
+    </Rectangle>
+    <Panel ux:Name="bottomPanel" Width="64%" Height="72%" Color="#FFFFFF" Opacity="0" Alignment="TopCenter">
+        <Scaling ux:Name="bottomPanelScaling" Y="0.7" X="0.6" />
+        <StackPanel Y="36%" Padding="15,32,15,22" ItemSpacing="16">
+            <Text Font="NotoBold" FontSize="20" Color="#181f72" TextWrapping="Wrap">{ Property i_name }</Text>
+            <Text Font="NotoBold" FontSize="18" Color="#2f2f2f" TextWrapping="Wrap">{ Property i_comment }</Text>
+            <StackPanel ItemSpacing="0">
+                <Text Font="NotoMedium" FontSize="15" Color="#2f2f2f">{ Property u_name }</Text>
+                <Text Font="NotoMedium" FontSize="15" Color="#2f2f2f">전화번호: { Property i_phone }</Text>
+                <Text Font="NotoMedium" FontSize="15" Color="#2f2f2f">주소: { Property i_addr }</Text>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel  Height="18" Dock="Bottom" Orientation="Horizontal" ItemSpacing="10" Margin="0,0,23,22" Alignment="BottomRight">
+            <Panel Width="18" Height="18">
+                <Clicked Handler="{background_on}" />
+                <Image StretchMode="Fill" File="../Assets/Phone.png" />
+            </Panel>
+            <Panel Width="18" Height="18">
+                <Image StretchMode="Fill" File="../Assets/Share.png" />
+            </Panel>
+        </StackPanel>
+    </Panel>
+</Rectangle>
