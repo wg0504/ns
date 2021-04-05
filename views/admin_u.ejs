@@ -1,0 +1,228 @@
+<% include admin_header %>
+<script>
+    $('.a_u').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/notice.css' />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/notice.js"></script>
+    <script src="/javascripts/ajax.js"></script>
+</head>
+<script>
+    function modify(idx) {
+        window.location.href = "/admin_u_m?u_idx=" + idx;
+    }
+</script>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        overflow: hidden;
+    }
+
+    .u_block {
+        display: flex;
+        flex-direction: row;
+    }
+
+    table {
+        border: solid 0px #ffffff;
+        border-spacing: 0px;
+        border-collapse: collapse;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td {
+        height: 30px;
+        text-align: center;
+    }
+
+    tr td {
+        border-top: solid 0.5px #cccccc;
+    }
+
+    .u_con_btn {
+        width: 50px;
+        height: 25px;
+        border-radius: 13px;
+        background-color: #c1c1c1;
+        color: #ffffff;
+        margin: auto;
+    }
+
+    .u_con_btn:hover {
+        cursor: pointer;
+        background-color: #181f72;
+    }
+
+    .btn_box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<%  for(var i=0; i<user.length; i++) {
+        var industry = "";
+        switch(user[i].u_industry){
+            case 1:
+            industry = "제조⋅생산⋅화학업";
+            break;
+            case 2:
+            industry = "건설업";
+            break;
+            case 3:
+            industry = "IT⋅정보통신업";
+            break;
+            case 4:
+            industry = "기관⋅협회";
+            break;
+            case 5:
+            industry = "서비스업";
+            break;
+            case 6:
+            industry = "미디어⋅광고업";
+            break;
+            case 7:
+            industry = "기타";
+            break;
+        }
+        var grade = "";
+        switch(user[i].u_grade){
+            case 1:
+            grade = "회장";
+            break;
+            case 2:
+            grade = "전임회장";
+            break;
+            case 3:
+            grade = "역대회장";
+            break;
+            case 4:
+            grade = "부회장";
+            break;
+            case 5:
+            grade = "부회장(대)";
+            break;
+            case 6:
+            grade = "수석부회장";
+            break;
+            case 7:
+            grade = "감사";
+            break;
+            case 8:
+            grade = "총무";
+            break;
+            case 9:
+            grade = "이사";
+            break;
+            case 10:
+            grade = "자문이사";
+            break;
+            case 11:
+            grade = "재무";
+            break;
+            case 12:
+            grade = "고문";
+            break;
+            case 13:
+            grade = "회원";
+            break;
+            case 30:
+            grade = "비회원";
+            break;
+        }
+        user[i].industry = industry;
+        user[i].grade = grade;
+    }
+%>
+
+<body>
+    <div class="container">
+        <table border="1">
+            <tr>
+                <th>
+                    <div class="u_con_t">No</div>
+                </th>
+                <th>
+                    <div class="u_con_t">ID</div>
+                </th>
+                <th>
+                    <div class="u_con_t">이름</div>
+                </th>
+                <th>
+                    <div class="u_con_t">이메일</div>
+                </th>
+                <th>
+                    <div class="u_con_t">이메일수신동의</div>
+                </th>
+                <th>
+                    <div class="u_con_t">정보공개동의</div>
+                </th>
+                <th>
+                    <div class="u_con_t">산업종류</div>
+                </th>
+                <th>
+                    <div class="u_con_t">회원등급</div>
+                </th>
+                <th>
+                    <div class="u_con_t">가입날짜</div>
+                </th>
+                <th>
+                    <div class="u_con_t">비고</div>
+                </th>
+            </tr>
+            <% for(var i=1; i<user.length; i++) {%>
+            <tr>
+                <td>
+                    <div class="u_con"><%=i%></div>
+                </td>
+                <td>
+                    <div class="u_con"><%=user[i].u_id%></div>
+                </td>
+                <td>
+                    <div class="u_con"><%=user[i].u_name%></div>
+                </td>
+                <td>
+                    <div class="u_con"><%=user[i].u_email%></div>
+                </td>
+                <td>
+                    <div class="u_con">
+                        <%if(user[i].u_emailchk == 1){%> O <%}else{%> X <%}%>
+                </div></td>
+                <td><div class="u_con">
+                    <%if(user[i].u_infochk == 1){%> O <%}else{%> X <%}%>
+                </div></td>
+                <td><div class="u_con"><%=user[i].industry%></div>
+                </td>
+                <td>
+                    <div class="u_con"><%=user[i].grade%></div>
+                </td>
+                <td>
+                    <div class="u_con"><%=user[i].u_date.slice(0,10)%></div>
+                </td>
+                <td>
+                    <div class="btn_box">
+                        <div class="u_con_btn" onclick="modify('<%=user[i].u_idx%>')">수정</div>
+                    </div>
+                </td>
+            </tr>
+            <%}%>
+        </table>
+    </div>
+</body>
+
+</html>

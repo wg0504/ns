@@ -1,0 +1,189 @@
+<% include admin_header %>
+<script>
+    $('.a_s').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        var fileTarget = $('.s_file');
+        fileTarget.on('change', function () { // 값이 변경되면 
+            if (window.FileReader) { // modern browser 
+                $('.file_list').children().remove();
+                var $this = $(this)[0].files;
+                for (var i = 0; i < $this.length; i++) {
+                    console.log($this[i].name);
+                    var filename = $this[i].name;
+                    $('.file_list').prepend('<div class="file1"> - ' + filename + '</div>');
+                }
+                // var filename = $(this)[0].files[0].name;
+            }
+            // else { // old IE 
+            //     var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+            // } 
+
+            // 추출한 파일명 삽입 
+            $('.upload-name').val(filename);
+        });
+    });
+
+    function mod_sup() {
+        if(document.admin_s_m.s_title.value == "") {
+            document.admin_s_m.s_title.focus();
+        } else if(document.admin_s_m.s_content.value == "") {
+            document.admin_s_m.s_content.focus();
+        } else {
+            document.admin_s_m.submit();
+        }
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-left: 20px;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .row.no_ {
+        margin-bottom: 0px;
+    }
+
+    .title {
+        width: 80px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .s_title,
+    .s_content {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+    }
+
+    .s_content {
+        height: 300px;
+        resize: none;
+    }
+
+    .mod_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #181f72;
+        color: #ffffff;
+    }
+
+    .mod_btn:hover {
+        background-color: #181f72;
+        cursor: pointer;
+    }
+
+    .btn_text {
+        font: 500 20px Noto Sans KR;
+        color: #ffffff;
+    }
+
+    .btn_area {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+    .file1 {
+        font: 400 14px Noto Sans KR;
+        color: #888888;
+        margin-left: 5px;
+    }
+
+    .s_file {
+        display: none;
+    }
+
+    .file_btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: #181f72;
+    }
+
+    .file_btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text2 {
+        font: 500 16px Noto Sans KR;
+        color: #ffffff;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form name="admin_s_m" action="/admin_s_m" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="s_idx" value="<%=support[0].s_idx%>" />
+            <div class="col">
+                <div class="row">
+                    <div class="title">제목</div>
+                    <input type="text" class="s_title" name="s_title" value="<%=support[0].s_title%>" />
+                </div>
+                <div class="row">
+                    <div class="title">내용</div>
+                    <textarea class="s_content" name="s_content"><%=support[0].s_content%></textarea>
+                </div>
+                <div class="row no_">
+                    <div class="title">첨부파일</div>
+                    <input type="file" class="s_file" id="s_file" name="s_file" multiple="multiple" />
+                    <label class="file_btn" for="s_file">
+                        <div class="btn_text2">파일 선택</div>
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="title"></div>
+                    <div class="file_list">
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <div class="mod_btn" onclick="mod_sup()">
+                    <div class="btn_text">저장</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

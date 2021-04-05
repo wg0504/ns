@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <link rel='stylesheet' href='/stylesheets/gallery_list.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    function gallery_add(u_idx) {
+        console.log('gallery_add button');
+        window.location.href = "/gallery_list?u_idx=" + u_idx + "&#";
+    }
+
+    function gallery_view(g_idx, u_idx) {
+        var link = "/gallery_view?g_idx=" + g_idx + '&u_idx=' + u_idx;
+        window.location.href = link;
+    }
+
+    function load_click($load, u_idx) {
+        $load.data('count', $load.data('count') + 1);
+        writing_load($load.data('count'), u_idx);
+    }
+
+    function writing_load(count, u_idx) {
+        $.ajax({
+            method: 'GET',
+            url: 'http://58.229.184.156:3000/load_gallery?count=' + count,
+            dataType: 'json',
+            data: '',
+            contentType: 'application/json; charset=UTF-8',
+        }).done((msg) => {
+            $('div').remove('.delw');
+            msg.forEach((item) => {
+                var imgArray = item.g_image.split(",");
+                var text = "";
+                text += '<div class="item2 rect" onclick="gallery_view('+item.g_idx+','+u_idx+')">';
+                text += '<img class="img1" src="gallery/'+imgArray[0]+'" alt="사진없음" />';
+                text += '</div>';
+                $('.content').append(text);
+            });
+            var text2 = '<div class="item2 rect-white delw"></div>';
+            text2 += '<div class="item2 rect-white delw"></div>';
+            text2 += '<div class="item2 rect-white delw"></div>';
+            text2 += '<div class="item2 rect-white delw"></div>';
+            text2 += '<div class="item2 rect-white delw"></div>';
+            $('.content').append(text2);
+        });
+    };
+</script>
+
+<body>
+    <div class="container">
+        <div class="img_area">
+            <%if(u_idx){%>
+            <div class="add_oval" onclick="gallery_add('<%=u_idx%>')"><img class="img2" src="/images/add-2.svg"
+                    alt="사진없음" /></div>
+            <%}%>
+            <!-- <div class="item1 menutitle">갤러리</div> -->
+            <div class="item1 content">
+                <%for(var i=0; i<gall.length; i++) {
+                    var imgArray = gall[i].g_image.split(",");%>
+                <div class="item2 rect" onclick="gallery_view('<%=gall[i].g_idx%>','<%=u_idx%>')">
+                    <img class="img1" src="gallery/<%=imgArray[0]%>" alt="사진없음" />
+                </div>
+                <%}%>
+                <div class="item2 rect-white delw"></div>
+                <div class="item2 rect-white delw"></div>
+                <div class="item2 rect-white delw"></div>
+                <div class="item2 rect-white delw"></div>
+                <div class="item2 rect-white delw"></div>
+            </div>
+        </div>
+        <div class="load" data-count=1 onclick="load_click($(this),'<%=u_idx%>')">
+            더보기
+            <img src="/images/up-arrow.svg" />
+        </div>
+    </div>
+</body>
+<!-- <script>
+    const _C = document.querySelector('.container');
+
+        let i = 0;
+        let x0 = null;
+
+        function unify(e) {
+            return e.changedTouches ? e.changedTouches[0] : e;
+        }
+
+        function lock(e) {
+            x0 = unify(e).clientX;
+        }
+
+        function move(e) {
+            if (x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0;
+                let s = Math.sign(dx);
+                if(dx < -50){
+                    // console.log('left');
+                } else if (dx > 50) {
+                    // console.log('right');
+                    window.location.href = "/gallery_list?#b";
+                }
+            }
+        }
+
+        _C.addEventListener('mousedown', lock, false);
+        _C.addEventListener('touchstart', lock, false);
+
+        _C.addEventListener('touchmove', e => {
+            e.preventDefault()
+        }, false);
+
+        _C.addEventListener('mouseup', move, false);
+        _C.addEventListener('touchend', move, false);
+</script> -->
+</html>

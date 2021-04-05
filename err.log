@@ -1,0 +1,622 @@
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_DATA_TOO_LONG: Data too long for column 'nh_content' at row 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'where clause'
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Handshake.onConnect (/home/ns/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Handshake._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Handshake.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'undefined' for column 'i_staff' at row 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Handshake.onConnect (/home/ns/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Handshake._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Handshake.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/routes/users.js:169
+        } catch (error) {
+          ^^^^^
+
+SyntaxError: Unexpected token catch
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/users.js:167
+        } catch (error) {
+          ^^^^^
+
+SyntaxError: Unexpected token catch
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10 , 10' at line 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Handshake.onConnect (/home/ns/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Handshake._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Handshake.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10 , 10' at line 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Handshake.onConnect (/home/ns/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Handshake._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Handshake.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13.5.1' at line 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Ping.onOperationComplete (/home/ns/node_modules/mysql/lib/Pool.js:110:5)
+    at Ping.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Ping._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Ping.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+/home/ns/node_modules/mysql/lib/protocol/Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13.5.1' at line 1
+    at Query.Sequence._packetToError (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/ns/node_modules/mysql/lib/Connection.js:200:25)
+    at pool.getConnection (/home/ns/public/javascripts/db.js:17:24)
+    at Handshake.onConnect (/home/ns/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/ns/node_modules/mysql/lib/Connection.js:502:10)
+    at Handshake._callback (/home/ns/node_modules/mysql/lib/Connection.js:468:16)
+    at Handshake.Sequence.end (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/ns/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/ns/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ns/node_modules/mysql/lib/protocol/Parser.js:76:12)
+Wed, 21 Oct 2020 09:14:16 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes/users.js:296:9
+/home/ns/routes/gallery.js:119
+> {
+^
+
+SyntaxError: Unexpected token >
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+Wed, 21 Oct 2020 09:16:55 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes/gallery.js:129:11
+Wed, 21 Oct 2020 09:22:33 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at routes/gallery.js:126:9
+/home/ns/routes/gallery.js:146
+  } catch (error) {
+  ^
+
+SyntaxError: missing ) after argument list
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:19
+Array.prototype.last = function()=>
+                                 ^^
+
+SyntaxError: Unexpected token =>
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:19
+Array.prototype.last = function() =>
+                                  ^^
+
+SyntaxError: Unexpected token =>
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:133
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:132
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:131
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:131
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:158
+    });
+    ^
+
+SyntaxError: Missing catch or finally after try
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:133
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:133
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:133
+      const fileName = new Date().valueOf() + req.body["fileformat[" + idx + "]"];
+            ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:147
+        `VALUES (${req.body.g_uidx}, '${req.body.g_title}',`+`` '${
+                                                                ^^^
+
+SyntaxError: Invalid or unexpected token
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:151
+    const query =
+          ^
+
+SyntaxError: Identifier 'query' has already been declared
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+/home/ns/routes/gallery.js:128
+    if()
+       ^
+
+SyntaxError: Unexpected token )
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)

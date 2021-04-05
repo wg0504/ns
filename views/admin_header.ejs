@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <!-- <link rel='stylesheet' href='/stylesheets/calendar.css' /> -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>논산시 기업인 협의회 관리자 페이지</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        font-family: Noto Sans KR !important;
+    }
+
+    .ah_container {
+        width: 100vw;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffffff;
+        position: fixed;
+        top: 0px;
+    }
+
+    .ah_head_content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .ah_title {
+        font-size: 30px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #181f72;
+        margin-left: 20px;
+    }
+
+    .ah_content1 {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 30px;
+    }
+
+    a.ah_content2 {
+        font-size: 20px;
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #d4d4d4;
+        text-decoration: none;
+    }
+
+    a:hover {
+        font-weight: 500;
+        color: #181f72 !important;
+    }
+
+    .now_page a {
+        font-weight: 500;
+        color: #181f72 !important;
+    }
+</style>
+
+<body>
+    <div class="ah_container">
+        <div class="ah_title">
+            논산시기업인협의회 관리자페이지
+        </div>
+        <div class="ah_head_content">
+            <div class="ah_content1 a_u"><a class= "ah_content2" href="/admin_u" style="color: #d4d4d4;">사용자</a></div>
+            <div class="ah_content1 a_n"><a class= "ah_content2" href="/admin_n" style="color: #d4d4d4;">공지사항</a></div>
+            <div class="ah_content1 a_s"><a class= "ah_content2" href="/admin_s" style="color: #d4d4d4;">기업지원소식</a></div>
+            <div class="ah_content1 a_g"><a class= "ah_content2" href="/admin_g" style="color: #d4d4d4;">갤러리</a></div>
+            <div class="ah_content1 a_h"><a class= "ah_content2" href="/admin_h" style="color: #d4d4d4;">연혁</a></div>
+            <div class="ah_content1 a_i"><a class= "ah_content2" href="/admin_i" style="color: #d4d4d4;">협의회소개</a></div>
+        </div>
+    </div>
+</body>
+
+</html>

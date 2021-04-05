@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/notice_detail.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/accordion.js"></script>
+    <script>
+        function fixH() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 0);
+            // $('html, body').css('position','fixed');
+            // $('html, body').css('top', '0px');
+            // $('html, body').css('overflow','hidden');
+        }
+
+        function replyWrite() {
+            if (reply_notice.r_content.value == "") {
+                return false;
+            } else {
+                reply_notice.submit();
+            }
+        }
+
+        $(document).ready(function () {
+            $('.wrap').on('keyup', 'textarea', function (e) {
+                $(this).css('height', 'auto');
+                $(this).height(this.scrollHeight);
+            });
+            $('.wrap').find('textarea').keyup();
+            $('.attachments_box').each((idx, item) => {
+                $(item).on('click', () => {
+                    var target = $(item).children().text().substring(1, $(item).children()
+                        .text().length);
+                    var href = window.location.href;
+                    window.location.href = window.location.href + "&filename=" + target;
+                })
+            })
+        });
+
+        function wbgh() {
+            var h = "calc(37px + "+$('.column.box').css('height')+")";
+            $('.white_bg').css('height', h);
+            var ch = "calc(100vh - 131px - "+$('.column.box').css('height')+")";
+            $('.content').css('height', ch);
+        }
+    </script>
+</head>
+
+<body style=" position: fixed; overflow: hidden; height: 100vh;" onload="wbgh()">
+
+    <div class="column container">
+        <div class="white_bg" style="width:100vw; background-color:#ffffff; height: 0px;">
+            <div class="column box">
+                <div class="row_inner items title">
+                    <div class="items"><%=notice[0].n_title%></div>
+                    <!-- <div>
+                        <%if((notice[0].n_uidx == u_idx) || (u_idx == '1')){%>
+                        <img src="/images/delete.svg" /> &nbsp&nbsp<img src="/images/edit.svg" />
+                        <%}%>
+                    </div> -->
+                </div>
+                <div class="row_inner items">
+                    <div class="row_inner user_box">
+                        <%switch(notice[0].u_industry){
+                            case 1:%>
+                        <img class="oval2" src="images/oval_red.svg" alt="사진없음" />
+                        <%break;
+                            case 2:%>
+                        <img class="oval2" src="images/oval_orange.svg" alt="사진없음" />
+                        <%break;
+                            case 3:%>
+                        <img class="oval2" src="images/oval_yellow.svg" alt="사진없음" />
+                        <%break;
+                            case 4:%>
+                        <img class="oval2" src="images/oval_green.svg" alt="사진없음" />
+                        <%break;
+                            case 5:%>
+                        <img class="oval2" src="images/oval_blue.svg" alt="사진없음" />
+                        <%break;
+                            case 6:%>
+                        <img class="oval2" src="images/oval_navy.svg" alt="사진없음" />
+                        <%break;
+                            case 7:%>
+                        <img class="oval2" src="images/oval_purple.svg" alt="사진없음" />
+                        <%break;
+                        }%>
+                        <%=notice[0].u_name%>
+                    </div>
+                    <div class="items notice_info"><%=notice[0].n_date%></div>
+                </div>
+            </div>
+        </div>
+        <div class="content padding_LR" data-reply="down">
+
+            <%if(notice[0].n_file == null){%>
+            <%}else if(notice[0].n_file == ""){%>
+            <%} else {
+                var files = notice[0].n_file.split(',');
+                for(var i=0; i<files.length; i++){%>
+            <a href="javascript:;" class="attachments_box">
+                <div class="attachments"> <img class="attachments_img" src="/images/download.svg" /><%=files[i]%></div>
+            </a>
+            <%}
+            }%>
+            <div class="wrap">
+                <textarea class="content_text" disabled><%=notice[0].n_content%></textarea>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="reply_box column">
+        <div class="items"></div>
+        <div class="row_inner items">
+            <div class="reply_count items">댓글&nbsp(<%=reply.length%>)</div>
+            <div class="reply_btn up"
+                style="display: flex; align-items: center; margin-right: 29px; margin-left: 29px;">
+                <img class="rotate180 reply_toggle" src="/images/down.svg" />
+            </div>
+        </div>
+        <div class="items"></div>
+    </div>
+
+    <div class="reply_cbox" data-reply="up">
+        <%for(var i=0; i<reply.length; i++){%>
+        <div class="row_inner reply_user">
+            <%switch(reply[i].u_industry){
+                case 1:%>
+            <img class="oval2" src="images/oval_red.svg" alt="사진없음" />
+            <%break;
+                case 2:%>
+            <img class="oval2" src="images/oval_orange.svg" alt="사진없음" />
+            <%break;
+                case 3:%>
+            <img class="oval2" src="images/oval_yellow.svg" alt="사진없음" />
+            <%break;
+                case 4:%>
+            <img class="oval2" src="images/oval_green.svg" alt="사진없음" />
+            <%break;
+                case 5:%>
+            <img class="oval2" src="images/oval_blue.svg" alt="사진없음" />
+            <%break;
+                case 6:%>
+            <img class="oval2" src="images/oval_navy.svg" alt="사진없음" />
+            <%break;
+                case 7:%>
+            <img class="oval2" src="images/oval_purple.svg" alt="사진없음" />
+            <%break;
+            }%>
+            <%=reply[i].u_name%>
+        </div>
+        <div class="reply_cont">
+            <%=reply[i].rn_content%>
+        </div>
+        <%}%>
+
+    </div>
+    <form name="reply_notice" action="/notice_reply" method="POST">
+        <input type="hidden" name="u_idx" value='<%=u_idx%>' />
+        <input type="hidden" name="r_nidx" value='<%=notice[0].n_idx%>' />
+        <%if(u_idx){%>
+        <div class="reply_input" data-reply="up">
+            <div class="row_inner">
+                <input type="text" class="input_box" name="r_content" placeholder="댓글을 입력하세요" onclick="fixH()" />
+                <div class="input_btn">
+                    <div class="btn_text" onclick="replyWrite()">등록</div>
+                </div>
+            </div>
+        </div>
+        <%} else {%>
+        <div class="reply_input reply_input2" data-reply="up" style="height:1px;"></div>
+        <%}%>
+        </form>
+
+</body>
+<!-- <script>
+    const _C = document.querySelector('.container');
+
+        let i = 0;
+        let x0 = null;
+
+        function unify(e) {
+            return e.changedTouches ? e.changedTouches[0] : e;
+        }
+
+        function lock(e) {
+            x0 = unify(e).clientX;
+        }
+
+        function move(e) {
+            if (x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0;
+                let s = Math.sign(dx);
+                if(dx < -50){
+                    // console.log('left');
+                } else if (dx > 50) {
+                    // console.log('right');
+                    window.history.back();
+                }
+            }
+        }
+
+        _C.addEventListener('mousedown', lock, false);
+        _C.addEventListener('touchstart', lock, false);
+
+        _C.addEventListener('touchmove', e => {
+            e.preventDefault()
+        }, false);
+
+        _C.addEventListener('mouseup', move, false);
+        _C.addEventListener('touchend', move, false);
+</script> -->
+</html>

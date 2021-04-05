@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <link rel='stylesheet' href='/stylesheets/gallery_view.css' />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $(window).on('load', function () {
+                $('.box').each((idx, elm) => {
+                    $(elm).data('slide', 'up');
+                    $(elm).on('click', (evnet) => {
+                        if ($(elm).data('slide') == 'up') {
+                            $("img").siblings(".icon5").css("display", "block");
+                            $("img").siblings(".icon4").css("display", "none");
+                            $('.content4').slideDown();
+                            if (reply_gallery.u_idx.value) {
+                                $('.content6').slideDown();
+                                $('.content6').css('display', 'flex');
+                            } else {
+                                $('.content6_2').slideDown();
+                            }
+                            var h = $('.replylist').css('height');
+                            $('.replyblack').css('height', 'calc(54vh - ' + h + ')');
+                            $(elm).data('slide', 'down');
+                            $('.fold').slideUp();
+                            // $('.fold2').slideDown();
+                        } else {
+                            $("img").siblings(".icon5").css("display", "none");
+                            $("img").siblings(".icon4").css("display", "block");
+                            $('.content4').slideUp();
+                            $('.content6').slideUp();
+                            $('.content6_2').slideUp();
+                            $(elm).data('slide', 'up');
+                            $('.fold').slideDown();
+                            // $('.fold2').slideUp();
+                        }
+                    })
+                })
+            });
+        })(jQuery);
+
+        function gallery_delete() {
+            console.log('delete');
+            var $el = $('#layer');
+            var isDim = $el.prev().hasClass('dim_bg');
+
+            isDim ? $('.dim_layer').fadeIn() : $el.fadeIn();
+
+            var $elWidth = ~~($el.outerWidth()),
+                $elHeight = ~~($el.outerHeight()),
+                docWidth = $(document).width(),
+                docHeight = $(document).height();
+
+            // 화면의 중앙에 레이어를 띄운다.
+            if ($elHeight < docHeight || $elWidth < docWidth) {
+                $el.css({
+                    marginTop: -$elHeight / 2,
+                    marginLeft: -$elWidth / 2
+                })
+            } else {
+                $el.css({
+                    top: 0,
+                    left: 0
+                });
+            }
+
+            $el.find('.pop_cancel').click(function () {
+                isDim ? $('.dim_layer').fadeOut() : $el.fadeOut();
+                return false;
+            });
+
+            $el.find('.pop_delete').click(function () {
+                delete_gallery.submit();
+                isDim ? $('.dim_layer').fadeOut() : $el.fadeOut();
+                return false;
+            });
+
+            $('.dim_bg').click(function () {
+                $('.dim_layer').fadeOut();
+                return false;
+            });
+        }
+
+        function gallery_modify() {
+            console.log('modify');
+        }
+
+        function goLeft() {
+            // console.log('goLeft');
+            $this = $('.selimg');
+            $this.removeClass('selimg');
+            $this.prev().addClass('selimg');
+            $('.icon3-r').css('display', 'block');
+            if ($('.selimg').hasClass('startimg')) {
+                $('.icon3-l').css('display', 'none');
+            }
+        }
+
+        function goRight() {
+            // console.log('goRight');
+            $this = $('.selimg');
+            $this.removeClass('selimg');
+            $this.next().addClass('selimg');
+            $('.icon3-l').css('display', 'block');
+            if ($('.selimg').hasClass('endimg')) {
+                $('.icon3-r').css('display', 'none');
+            }
+        }
+
+        function replyWrite() {
+            if (reply_gallery.r_content.value == "") {
+                return false;
+            } else {
+                reply_gallery.submit();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="delete_gallery" action="/gallery_delete" method="POST">
+        <input type="hidden" name="g_idx" value=<%=gall[0].g_idx%> />
+    </form>
+    <div class="dim_layer">
+        <div class="dim_bg"></div>
+        <div id="layer" class="pop_layer">
+            <div class="pop_box">
+                <div class="pop_col1">
+                    <div class="pop_text">
+                        삭제하시겠습니까?
+                    </div>
+                </div>
+                <div class="pop_rowline"></div>
+                <div class="pop_col2">
+                    <div class="pop_cancel">
+                        <div class="pop_text">
+                            취소
+                        </div>
+                    </div>
+                    <div class="pop_colline"></div>
+                    <div class="pop_delete">
+                        <div class="pop_text">
+                            삭제
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <% var imgArray = gall[0].g_image.split(",");%>
+        <!-- <div class="item1 menutitle">갤러리</div> -->
+        <div class="item2 contents accordion">
+            <div class="content2">
+                <div class="gtitle">
+                    <%=gall[0].g_title%>
+                </div>
+                <div class="subcontent">
+                    <div class="gdate">
+                        <%=gall[0].g_date%>
+                    </div>
+                    <div class="subcontent2">
+                        <%if(gall[0].g_uidx == u_idx){%>
+                        <div class="icon1" onclick='gallery_delete()'><img src="images/gallery_delete.svg" alt="사진없음" />
+                        </div>
+                        <!-- <div class="icon1" onclick='gallery_modify()'><img src="images/gallery_modify.svg" alt="사진없음" />
+                        </div> -->
+                        <%}%>
+                    </div>
+                </div>
+                <div class="fold">
+                    <div class="imgcontainer">
+                        <div class="icon2-left"><img class="icon3-l" src="images/g_left-arrow.svg" alt="사진없음"
+                                onclick="goLeft()" /></div>
+                        <% for(var i=0; i<imgArray.length; i++) {
+                            if(i==0) {%>
+                        <div class="imgbox selimg startimg" data-arrIdx=<%=i%>>
+                            <img class="img1" src="gallery/<%=imgArray[i]%>" alt="사진없음" />
+                        </div>
+                        <%} else {%>
+                        <%if(i==(imgArray.length-1)) {%>
+                        <div class="imgbox endimg" data-arrIdx=<%=i%>>
+                            <img class="img1" src="gallery/<%=imgArray[i]%>" alt="사진없음" />
+                        </div>
+                        <%} else {%>
+                        <div class="imgbox" data-arrIdx=<%=i%>>
+                            <img class="img1" src="gallery/<%=imgArray[i]%>" alt="사진없음" />
+                        </div>
+                        <%}
+                            }
+                        }%>
+                        <div class="icon2-right">
+                            <% if(imgArray.length != 1){%>
+                            <img class="icon3-r" src="images/g_right-arrow.svg" alt="사진없음" onclick="goRight()" />
+                            <%}%>
+                        </div>
+                    </div>
+                    <textarea class="textcontainer" disabled><%=gall[0].g_content%></textarea>
+                        </div>
+                    </div>
+                    <div class="content2 contents">
+                        <div class="content3">
+                            <div class="item4">
+                                댓글 (<%=reply.length%>)
+                            </div>
+                            <div class="icon4box box">
+                                <img class="icon4" src="images/opencon.svg" alt="사진없음" />
+                                <img class="icon5" src="images/opencon.svg" alt="사진없음" />
+                            </div>
+                        </div>
+                        <div class="content4">
+                            <div class="replylist">
+                                <% for(var i=0; i<reply.length; i++){%>
+                                <div>
+                                    <div class="content5">
+                                        <div class="oval1box">
+                                            <%switch(reply[i].u_industry){
+                                            case 1:%>
+                                            <img class="icon3" src="images/oval_red.svg" alt="사진없음" />
+                                            <%break;
+                                            case 2:%>
+                                            <img class="icon3" src="images/oval_orange.svg" alt="사진없음" />
+                                            <%break;
+                                            case 3:%>
+                                            <img class="icon3" src="images/oval_yellow.svg" alt="사진없음" />
+                                            <%break;
+                                            case 4:%>
+                                            <img class="icon3" src="images/oval_green.svg" alt="사진없음" />
+                                            <%break;
+                                            case 5:%>
+                                            <img class="icon3" src="images/oval_blue.svg" alt="사진없음" />
+                                            <%break;
+                                            case 6:%>
+                                            <img class="icon3" src="images/oval_navy.svg" alt="사진없음" />
+                                            <%break;
+                                            case 7:%>
+                                            <img class="icon3" src="images/oval_purple.svg" alt="사진없음" />
+                                            <%break;
+                                        }%>
+                                        </div>
+                                        <div class="replename"><%=reply[i].u_name%></div>
+                                    </div>
+                                    <div class="replecon"><%=reply[i].rg_content%></div>
+                                </div>
+                                <%if(i != (reply.length-1)){%>
+                                <div class="line"></div>
+                                <%}
+                                }%>
+                            </div>
+                            <div class="replyblack"></div>
+                        </div>
+                        <form name="reply_gallery" action="/gallery_reply" method="POST">
+                            <input type="hidden" name="u_idx" value='<%=u_idx%>' />
+                            <input type="hidden" name="r_gidx" value='<%=gall[0].g_idx%>' />
+                            <div class="content6">
+                                <div class="content7">
+                                    <input type="text" class="replewrite" name="r_content" placeholder="댓글을 입력하세요." />
+                                    <div class="icon6box" onclick="replyWrite()">
+                                        등록
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content6_2"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

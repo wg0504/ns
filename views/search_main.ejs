@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/search_main.css' />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/search_main.js"></script>
+    <script src="/javascripts/ajax.js"></script>
+</head>
+
+<body>
+    <div class="column ">
+        <div class="title title_term padding_LR">
+            산업별 필터
+        </div>
+        <div class="row_inner filter_div">
+            <div class="filter_box start" data-filter=1>
+                <div class="filter_box_in">
+                    전체
+                </div>
+            </div>
+            <%  var list = ['제조ㆍ생산ㆍ화학업','건설업','IT·정보통신업','기관·협회','서비스업'] 
+            for(var i=0;i<list.length;i++){%>
+            <div class="filter_box " data-filter=<%=i+2%>>
+                <div class="filter_box_in">
+                    <%=list[i]%>
+                </div>
+            </div>
+            <%}%>
+            <div class="filter_end"></div>
+        </div>
+        <div class="row_inner title_term padding_LR">
+            <div class="title items100">멤버 목록</div><div class="count">총 38명</div>
+        </div>
+        <% var member_list = [{company:'(주) 국제기계금속',name:'회장 이경배'},
+                            {company:'우양강재 (주)',name:'회장 김고향'},
+                            {company:'CJ제일제당',name:'회장 박창석'},
+                            {company:'한국야쿠르트',name:'회장 이철한'},
+                            {company:'성신레미콘',name:'회장 우지석'}]
+        for(var i=0;i<member_list.length;i++){%>
+            <div class="column member_box">
+                <div class="member_company"><%= member_list[i].company%></div>
+                <div class="member_name"><%= member_list[i].name%></div>
+            </div>
+        <%}%>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <link rel='stylesheet' href='/stylesheets/gallery_add.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    // $(document).ready(function () {
+    //     var fileTarget = $('.filebox .upload-hidden');
+
+    //     fileTarget.on('change', function () {
+    //         if (window.FileReader) {
+    //             // 파일명 추출
+    //             var filename = $(this)[0].files[0].name;
+    //         } else {
+    //             // Old IE 파일명 추출
+    //             var filename = $(this).val().split('/').pop().split('\\').pop();
+    //         };
+    //     });
+
+    //     //preview image 
+    //     var imgTarget = $('.preview-image .upload-hidden');
+
+    //     imgTarget.on('change', function () {
+    //         var parent = $(this).parent();
+    //         // parent.children('.upload-display').remove();
+
+    //         if (window.FileReader) {
+    //             //image 파일만
+    //             if (!$(this)[0].files[0].type.match(/image\//)) return;
+
+    //             var reader = new FileReader();
+    //             reader.onload = function (e) {
+    //                 var src = e.target.result;
+    //                 parent.prepend(
+    //                     '<div class="image_box"><div class="delete_btn" onclick="deleteImage($(this))"><img class="img3" src="/images/add-2.svg" /></div><img class="upload-thumb" src="' +
+    //                     src + '" ></div>');
+    //             }
+    //             reader.readAsDataURL($(this)[0].files[0]);
+    //         } else {
+    //             $(this)[0].select();
+    //             $(this)[0].blur();
+    //             var imgSrc = document.selection.createRange().text;
+    //             parent.prepend(
+    //                 '<div class="image_box"><img class="upload-thumb"></div>'
+    //             );
+
+    //             var img = $(this).siblings('.upload-display').find('img');
+    //             img[0].style.filter =
+    //                 "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\"" +
+    //                 imgSrc + "\")";
+    //         }
+    //     });
+    // });
+
+    //=====================================================================================================
+
+    function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+        var parent = $(this).parent();
+
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
+
+            // Only process image files.
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            // Closure to capture the file information.
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    // Render thumbnail.
+                    // var span = document.createElement('span');
+                    // span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                    //     '" title="', escape(theFile.name), '"/>'
+                    // ].join('');
+                    // document.getElementById('previewImg').insertBefore(span, null);
+                    var src = e.target.result;
+                    parent.prepend(
+                        '<div class="image_box"><div class="delete_btn" onclick="deleteImage($(this))"><img class="img3" src="/images/add-2.svg" /></div><img class="upload-thumb" src="' +
+                        src + '" ></div>');
+                };
+            })(f);
+
+            // Read in the image file as a data URL.
+            reader.readAsDataURL(f);
+        }
+    }
+
+    function deleteImage($this) {
+        $this.parent().remove();
+    }
+
+    function modifyImage() {
+        console.log('modify button');
+        console.log($('#input_file').val());
+    }
+
+    function addGallery() {
+        console.log('addGallery()');
+        if(document.gallery_add.title.value==""){
+            console.log('no title');
+        } else if (document.gallery_add.content.value=="") {
+            console.log('no content');
+        } else if (document.gallery_add.images.value=="") {
+            console.log('no images');
+        } else {
+            console.log(document.gallery_add.images);
+            gallery_add.submit();
+        }
+    }
+</script>
+<style>
+    .content_w {
+        height: 1px;
+        margin-top: 26px;
+        background-color: #ffffff;
+    }
+
+    .content1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 0 0 auto;
+    }
+
+    .content2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 9px;
+        padding-right: 9px;
+        flex: 0 0 auto;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2f2f2f;
+        margin-left: 8px;
+        margin-bottom: 8px;
+    }
+
+    input.rect1 {
+        font-size: 15px;
+        font-weight: medium;
+        width: 100%;
+        height: 38px;
+        border-radius: 5px;
+        background-color: #f7f7f7;
+        border: solid 0px #f7f7f7;
+        margin-bottom: 18px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    textarea.rect2 {
+        font-size: 15px;
+        font-weight: medium;
+        width: 100%;
+        height: 125px;
+        border-radius: 5px;
+        background-color: #f7f7f7;
+        border: solid 0px #f7f7f7;
+        margin-bottom: 18px;
+        padding-top: 8px;
+        padding-left: 8px;
+        resize: none;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .iconbox {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .content3 {
+        height: 155px;
+        overflow-x: scroll;
+        white-space: nowrap;
+        flex: 0 0 auto;
+    }
+
+    div .image_box {
+        display: inline-flex;
+        width: 145px;
+        height: 145px;
+        border-radius: 5px;
+        background-color: #d8d8d8;
+        margin-left: 8px;
+        margin-right: 8px;
+        position: relative;
+    }
+
+    .image_box .upload-thumb {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .image_box .delete_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: solid 0px #000000;
+        z-index: 10;
+    }
+
+    .img3 {
+        color: #ffffff;
+        width: 60%;
+        height: 60%;
+        transform: rotate(45deg);
+    }
+
+    .content4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
+        width: 141px;
+        height: 47px;
+        border-radius: 23.5px;
+        background-color: #181f72;
+        margin-bottom: 20px;
+        flex: 0 0 auto;
+    }
+
+    .iconbox2 {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+
+    .img2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .con_text {
+        font-size: 20px;
+        font-weight: medium;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .where {
+        display: block;
+        margin: 25px 15px;
+        font-size: 11px;
+        color: #000;
+        text-decoration: none;
+        font-family: verdana;
+        font-style: italic;
+    }
+
+    .filebox input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    .filebox .upload-display {
+        margin-bottom: 5px;
+    }
+
+    @media(min-width: 768px) {
+        .filebox .upload-display {
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 0;
+        }
+    }
+
+    .filebox .upload-thumb-wrap {
+        display: inline-block;
+        width: 54px;
+        padding: 2px;
+        vertical-align: middle;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .filebox .upload-display img {
+        display: block;
+        max-width: 100%;
+        width: 100% \9;
+        height: auto;
+    }
+
+    .filebox label {
+        color: #ffffff;
+        background-color: #ffffff;
+        border-color: #ffffff;
+    }
+</style>
+
+<body>
+    <form name="gallery_add" enctype="multipart/form-data" action="/gallery_add1" method="POST">
+        <div class="container filebox preview-image">
+            <div class="content_w"></div>
+            <div class="content1">
+                <div class="subtitle">
+                    제목
+                </div>
+            </div>
+            <div class="content2">
+                <input type="text" class="rect1" name="title" />
+            </div>
+            <div class="content1">
+                <div class="subtitle">
+                    본문 내용
+                </div>
+            </div>
+            <div class="content2">
+                <textarea class="rect2" name="content"></textarea>
+            </div>
+            <div class="content1">
+                <div class="subtitle">
+                    이미지
+                </div>
+                <div class="icons">
+                    <div class="iconbox" onclick="modifyImage()"><img class="img1" src="/images/g_add_pen.svg"
+                            alt="사진없음" />
+                    </div>
+                    <label class="iconbox" for="input_file"><img class="img1" src="/images/g_add_plus.svg" alt="사진없음" />
+                    </label>
+                </div>
+            </div>
+            <div class="content3">
+                <div class="image_box">
+                <div class="delete_btn" onclick="deleteImage($(this))"><img class="img3" src="/images/add-2.svg" />
+                </div>
+            </div>
+                <input type="file" id="input_file" name="images" class="upload-hidden" accept="image/*"
+                    multiple="multiple" />
+                <script>
+                    document.getElementById('input_file').addEventListener('change', handleFileSelect, false);
+                </script>
+            </div>
+            <div class="content4" onclick="addGallery()">
+                <div class="iconbox2"><img class="img2" src="/images/gallery_add_v.svg" alt="사진없음" /></div>
+                <div class="con_text">작성 완료</div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

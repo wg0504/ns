@@ -1,0 +1,213 @@
+<% include admin_header %>
+<script>
+    $('.a_s').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<script>
+    function mod_sup(idx) {
+        window.location.href = "/admin_s_m?s_idx=" + idx;
+    }
+
+    function del_sup(idx) {
+        window.location.href = "/admin_s_d?s_idx=" + idx;
+    }
+
+    function show_sup($this) {
+        var text = $this.next().next();
+        if (text.hasClass('hide')) {
+            hide_all();
+            text.removeClass('hide');
+            text.addClass('show');
+            text.show();
+            setHeight();
+        } else {
+            hide_all();
+        }
+    }
+
+    function hide_all() {
+        $('.show').hide();
+        $('.show').addClass('hide');
+        $('.show').removeClass('show');
+    }
+
+    function setHeight() {
+        $('.col1').on('keyup', 'textarea', function (e) {
+            $(this).css('height', 'auto');
+            $(this).height(this.scrollHeight);
+        });
+        $('.col1').find('textarea').keyup();
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+    }
+
+    .s_area {
+        height: calc(100vh - 150px);
+        overflow: auto;
+    }
+
+    .col1,
+    .col2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .s_title:hover {
+        cursor: pointer;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .row2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 800px;
+    }
+
+    .s_title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .s_date {
+        font-size: 14px;
+        font-weight: 300;
+        color: #aaaaaa;
+    }
+
+    .line {
+        width: 800px;
+        height: 1px;
+        background-color: #c4c4c4;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .mod_btn,
+    .del_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #c1c1c1;
+        margin: 2px;
+    }
+
+    .mod_btn:hover,
+    .del_btn:hover {
+        cursor: pointer;
+        background-color: #181f72;
+    }
+
+    .btn_text {
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    .s_con.hide {
+        display: none;
+    }
+
+    .s_con {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        color: #000000;
+        resize: none;
+        border: solid 0px #ffffff;
+        background-color: #ffffff;
+        padding-left: 10px;
+    }
+
+    .btn2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #181f72;
+        color: #ffffff;
+    }
+
+    .btn2:hover {
+        background-color: #181f72;
+        cursor: pointer;
+    }
+
+    .btn_text2 {
+        font: 500 20px Noto Sans KR;
+    }
+
+    .add_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 815px;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="s_area">
+        <% for(var i=0; i<support.length; i++) {%>
+        <div class="row2">
+            <div class="col1">
+                <div class="s_title" onclick="show_sup($(this))">
+                <%if(support[i].s_file == null){%>
+                <%=support[i].s_title%>
+                <%} else {%>
+                <%=support[i].s_title%>&nbsp<img src="/images/clip.svg" />
+                <%}%>
+                </div>
+                <div class="s_date"><%=support[i].s_date.slice(0,10)%>
+                </div>
+                <textarea class="s_con hide" disabled><%=support[i].s_content%></textarea>
+            </div>
+            <div class="col2">
+                <div class="mod_btn" onclick="mod_sup('<%=support[i].s_idx%>')">
+                    <div class="btn_text">수정</div>
+                </div>
+                <div class="del_btn" onclick="del_sup('<%=support[i].s_idx%>')">
+                    <div class="btn_text">삭제</div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <%}%>
+        </div>
+        <!-- <div class="add_btn">
+                <div class="btn2" onclick="add_sup()">
+                    <div class="btn_text2">새 글 작성</div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+</html>

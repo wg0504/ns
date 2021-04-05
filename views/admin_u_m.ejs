@@ -1,0 +1,206 @@
+<% include admin_header %>
+<script>
+    $('.a_u').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/notice.css' />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/notice.js"></script>
+    <script src="/javascripts/ajax.js"></script>
+</head>
+<script>
+    function saveUser() {
+        if (window.admin_u_m.u_name.value == "") {
+            alert('이름을 입력하세요.');
+            window.admin_u_m.u_name.focus();
+        } else {
+            window.admin_u_m.submit();
+        }
+    }
+
+    function deleteUser(idx) {
+        window.location.href = "/admin_u_d?u_idx=" + idx;
+    }
+</script>
+<style>
+    body {
+        margin: 0px;
+        font-family: Noto Sans KR !important;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        overflow: hidden;
+    }
+
+    .u_con_btn {
+        width: 50px;
+        height: 25px;
+        border-radius: 13px;
+        background-color: #c1c1c1;
+        color: #ffffff;
+        margin: auto;
+    }
+
+    .u_con_btn:hover {
+        cursor: pointer;
+        background-color: #181f72;
+    }
+
+    .btn_box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .row_box {
+        display: flex;
+        flex-direction: row;
+        width: 60vw;
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+
+    .u_con_t {
+        width: 150px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .sel_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input {
+        width: 250px;
+        font: 400 15px Noto Sans KR;
+        padding: 2px;
+        padding-left: 5px;
+    }
+
+    input[type="checkbox"] {
+        margin: 0px;
+    }
+
+    .btn_area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 20px;
+        margin-right: 50px;
+    }
+
+    .submit_btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 36px;
+        border-radius: 18px;
+        border: solid 0px #181f72;
+        background-color: #181f72;
+        color: #ffffff;
+        margin: 5px;
+    }
+
+    .submit_btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text {
+        font-size: 18px;
+        font-weight: 500;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form name="admin_u_m" action="/admin_u_m" method="POST">
+            <input type="hidden" name="u_idx" value="<%=user[0].u_idx%>" />
+            <div class="row_box">
+                <div class="u_con_t">ID</div>
+                <div class="u_con"><%=user[0].u_id%></div>
+            </div>
+            <div class="row_box">
+                <div class="u_con_t">이름</div>
+                <div class="u_con"><input type="text" name="u_name" value="<%=user[0].u_name%>" /></div>
+            </div>
+            <div class="row_box">
+                <div class="u_con_t">이메일</div>
+                <div class="u_con"><input type="text" name="u_email" value="<%=user[0].u_email%>" /></div>
+            </div>
+            <div class="row_box">
+                <div class="u_con_t">이메일수신동의</div>
+                <div class="u_con"><input type="checkbox" name="u_emailchk" <%if(user[0].u_emailchk == 1){%>
+                        checked="true" <%}%> /></div>
+            </div>
+            <div class="row_box">
+                <div class="u_con_t">정보공개동의</div>
+                <div class="u_con"><input type="checkbox" name="u_infochk" <%if(user[0].u_infochk == 1){%>
+                        checked="true" <%}%> /></div>
+            </div>
+            <div class="row_box">
+                <div class="u_con_t">산업종류</div>
+                <div class="sel_box">
+                    <select name="u_industry">
+                        <option value="1" <%if(user[0].u_industry == 1){%> selected="selected" <%}%> >제조⋅생산⋅화학업</option>
+                        <option value="2" <%if(user[0].u_industry == 2){%> selected="selected" <%}%> >건설업</option>
+                        <option value="3" <%if(user[0].u_industry == 3){%> selected="selected" <%}%> >IT⋅정보통신업</option>
+                        <option value="4" <%if(user[0].u_industry == 4){%> selected="selected" <%}%> >기관⋅협회</option>
+                        <option value="5" <%if(user[0].u_industry == 5){%> selected="selected" <%}%> >서비스업</option>
+                        <option value="6" <%if(user[0].u_industry == 6){%> selected="selected" <%}%> >미디어⋅광고업</option>
+                        <option value="7" <%if(user[0].u_industry == 7){%> selected="selected" <%}%> >기타</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row_box">
+                <div class="u_con_t">회원등급</div>
+                <div class="sel_box">
+                    <select name="u_grade">
+                        <option value="1" <%if(user[0].u_grade == 1){%> selected="selected" <%}%> >회장</option>
+                        <option value="2" <%if(user[0].u_grade == 2){%> selected="selected" <%}%> >전임회장</option>
+                        <option value="3" <%if(user[0].u_grade == 3){%> selected="selected" <%}%> >역대회장</option>
+                        <option value="4" <%if(user[0].u_grade == 4){%> selected="selected" <%}%> >부회장</option>
+                        <option value="5" <%if(user[0].u_grade == 5){%> selected="selected" <%}%> >부회장(대)</option>
+                        <option value="6" <%if(user[0].u_grade == 6){%> selected="selected" <%}%> >수석부회장</option>
+                        <option value="7" <%if(user[0].u_grade == 7){%> selected="selected" <%}%> >감사</option>
+                        <option value="8" <%if(user[0].u_grade == 8){%> selected="selected" <%}%> >총무</option>
+                        <option value="9" <%if(user[0].u_grade == 9){%> selected="selected" <%}%> >이사</option>
+                        <option value="10" <%if(user[0].u_grade == 10){%> selected="selected" <%}%> >자문이사</option>
+                        <option value="11" <%if(user[0].u_grade == 11){%> selected="selected" <%}%> >재무</option>
+                        <option value="12" <%if(user[0].u_grade == 12){%> selected="selected" <%}%> >고문</option>
+                        <option value="13" <%if(user[0].u_grade == 13){%> selected="selected" <%}%> >회원</option>
+                        <option value="30" <%if(user[0].u_grade == 30){%> selected="selected" <%}%> >비회원</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn_area">
+                <div class="submit_btn" onclick="deleteUser('<%=user[0].u_idx%>')">
+                    <div class="btn_text">삭제</div>
+                </div>
+                <div class="submit_btn" onclick="saveUser()">
+                    <div class="btn_text">저장</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

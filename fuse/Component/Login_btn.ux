@@ -1,5 +1,0 @@
-<Rectangle ux:Class="Login_btn">
-    <string ux:Property="text" />
-    <string ux:Property="color" />
-    <Text Alignment="Center" Color="{Property color}">{Property text}</Text>
-</Rectangle>

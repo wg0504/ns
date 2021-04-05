@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <!-- <link rel='stylesheet' href='/stylesheets/calendar.css' /> -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    function login() {
+        if (document.admin_login.id.value == "") {
+            alert('id');
+        } else if (document.admin_login.pw.value == "") {
+            alert('pw');
+        } else {
+            document.admin_login.submit();
+        }
+    }
+</script>
+<style>
+    body {
+        margin: 0px;
+        font-family: Noto Sans KR !important;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .submit_btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 68px;
+        border: solid 1px #181f72;
+        background-color: #181f72;
+        color: #ffffff;
+        margin: 5px;
+    }
+
+    .submit_btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .id_input,
+    .pw_input {
+        display: flex;
+        flex-direction: row;
+        margin: 5px;
+    }
+
+    .input_text {
+        width: 40px;
+        font-size: 20px;
+    }
+
+    .btn_area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    input {
+        width: 100px;
+        font: 500 15px Noto Sans KR;
+    }
+
+    .row_box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col_box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ah_title {
+        font-size: 30px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #181f72;
+        margin: 50px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="ah_title">
+            논산시기업인협의회 관리자페이지
+        </div>
+        <form name="admin_login" action="/admin_login" method="POST">
+            <div class="row_box">
+                <div class="col_box">
+                    <div class="id_input">
+                        <div class="input_text">ID</div>
+                        :&nbsp<input type="text" name="id">
+                    </div>
+                    <div class="pw_input">
+                        <div class="input_text">PW</div>
+                        :&nbsp<input type="password" name="pw">
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <div class="submit_btn" onclick="login()">
+                        <div class="btn_text">로그인</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

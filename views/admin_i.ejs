@@ -1,0 +1,154 @@
+<% include admin_header %>
+<script>
+    $('.a_i').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    function modify() {
+        window.location.href = "/admin_i_m";
+    }
+
+    function modify_p() {
+        window.location.href = "/admin_i_p";
+    }
+</script>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-left: 20px;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .row.no_ {
+        margin-bottom: 0px;
+    }
+
+    .i_title {
+        width: 100px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .i_content {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+        height: 200px;
+        resize: none;
+    }
+
+    .i_content2 {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+        resize: none;
+    }
+
+    .i_content3 {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+        height: 100px;
+        resize: none;
+    }
+    
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #181f72;
+        color: #ffffff;
+        margin-left: 20px;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text {
+        font: 500 20px Noto Sans KR;
+        color: #ffffff;
+    }
+
+    .row2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form name="admin_i_m" action="/admin_i_m" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="u_idx" value="<%=user[0].u_idx%>">
+            <div class="col">
+                <div class="row">
+                    <div class="i_title">주소</div>
+                    <input type="text" class="i_content2" name="i_addr" value="<%=user[0].i_addr%>" disabled>
+                </div>
+                <div class="row">
+                    <div class="i_title">전화번호</div>
+                    <input type="text" class="i_content2" name="i_phone" value="<%=user[0].i_phone%>" disabled>
+                </div>
+                <div class="row">
+                    <div class="i_title">홈페이지</div>
+                    <input type="text" class="i_content2" name="i_url" value="<%=user[0].i_url%>" disabled>
+                </div>
+                <div class="row">
+                    <div class="i_title">간단한소개</div>
+                    <textarea class="i_content" name="i_comment" disabled><%=user[0].i_comment%></textarea>
+                </div>
+                <div class="row">
+                    <div class="i_title">슬로건</div>
+                    <textarea class="i_content3" name="i_slogan" disabled><%=user[0].i_slogan%></textarea>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="btn" onclick="modify()">
+                    <div class="btn_text">협의회소개 수정</div>
+                </div>
+                <div class="btn" onclick="modify_p()">
+                    <div class="btn_text">사진바꾸기</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

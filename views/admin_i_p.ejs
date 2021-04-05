@@ -1,0 +1,216 @@
+<% include admin_header %>
+<script>
+    $('.a_i').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+</script>
+<style>
+</style>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+
+</html><% include admin_header %>
+<script>
+    $('.a_i').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        var fileTarget = $('.i_file');
+        fileTarget.on('change', function () {
+            readURL(this);
+        });
+    });
+
+    function save() {
+        document.admin_i_p.submit();
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_section').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-left: 20px;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .row.no_ {
+        margin-bottom: 0px;
+    }
+
+    .i_title {
+        width: 100px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .i_content {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+        height: 200px;
+        resize: none;
+    }
+
+    .i_content2 {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+        resize: none;
+    }
+
+    .i_content3 {
+        width: 600px;
+        font: 400 16px Noto Sans KR;
+        border: solid 1px #a1a1a1;
+        margin: 0px;
+        padding: 4px;
+        height: 100px;
+        resize: none;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #181f72;
+        color: #ffffff;
+        margin-left: 20px;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text {
+        font: 500 20px Noto Sans KR;
+        color: #ffffff;
+    }
+
+    .row2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .preview_area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 600px;
+        height: 400px;
+        margin: 20px;
+    }
+    
+    .i_file {
+        display: none;
+    }
+    
+    .file_btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: #181f72;
+    }
+
+    .file_btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text2 {
+        font: 500 16px Noto Sans KR;
+        color: #ffffff;
+    }
+
+    #image_section {
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form name="admin_i_p" action="/admin_i_p" method="POST" enctype="multipart/form-data">
+            <div class="col">
+                <input type="file" class="i_file" id="i_file" name="i_file" accept="image/*" />
+                <label class="file_btn" for="i_file">
+                    <div class="btn_text2">파일 선택</div>
+                </label>
+                <div class="preview_area">
+                    <img id="image_section" src="images/<%=user[0].i_image%>" alt="사진을 불러오지 못했습니다." />
+                </div>
+                <div class="row2">
+                    <div class="btn" onclick="save()">
+                        <div class="btn_text">저장</div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</body>
+
+</html>

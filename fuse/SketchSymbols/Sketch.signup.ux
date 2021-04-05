@@ -1,5 +1,0 @@
-<Panel ux:Class="Sketch.signup" Width="92" Height="27">
-	<Text Color="0.09411765, 0.1215686, 0.4470588, 1" FontSize="22" Value="SIGN UP" TextTruncation="None" TextWrapping="Wrap" TextAlignment="Left" Width="96" Alignment="HorizontalCenter" Offset="2.173913%, 0" Margin="0">
-		<!-- SIGN UP -->
-	</Text>
-</Panel>

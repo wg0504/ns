@@ -1,0 +1,230 @@
+<% include admin_header %>
+<script>
+    $('.a_h').addClass('now_page');
+</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <!-- <link rel='stylesheet' href='/stylesheets/calendar.css' /> -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<script>
+    function setHeight() {
+        $('.history_con').on('keyup', 'textarea', function (e) {
+            $(this).css('height', 'auto');
+            $(this).height(this.scrollHeight);
+        });
+        $('.history_con').find('textarea').keyup();
+    }
+
+    function showH($this) {
+        var s = $this.data('s');
+        var e = $this.data('e');
+        $('.now_tab').removeClass('now_tab');
+        $this.addClass('now_tab');
+        $('.row').css('display', 'none');
+        for (var i = e; i <= s; i++) {
+            $('[data-year=' + i + ']').css('display', 'flex');
+        }
+        $('.his_area').animate({
+            scrollTop: 0
+        }, 0);
+        setHeight();
+    }
+
+    function del_his(idx) {
+        window.location.href = "/admin_h_d?nh_idx=" + idx;
+    }
+
+    function add_his() {
+        window.location.href = "/admin_h_a";
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 110px;
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        top: 60px;
+    }
+
+    .tab {
+        width: 130px;
+        height: 32px;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        background-color: #b4b4b4;
+        color: #ffffff;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .tab:hover {
+        background-color: #181f72;
+        cursor: pointer;
+    }
+
+    .tab.now_tab {
+        width: 130px;
+        height: 32px;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        background-color: #181f72;
+        color: #ffffff;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .history_con {
+        margin-left: 20px;
+    }
+
+    .con {
+        width: 550px;
+        resize: none;
+        background-color: #ffffff;
+        border: solid 0px #ffffff;
+        overflow: visible;
+        font: 400 16px Noto Sans KR;
+    }
+
+    .line {
+        height: 1px;
+        width: 110%;
+        background-color: #dddddd;
+        margin-bottom: 20px;
+    }
+
+    .his_area {
+        width: 650px;
+        height: calc(100vh - 180px);
+        overflow: auto;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 25px;
+        border-radius: 13px;
+        background-color: #c1c1c1;
+        color: #ffffff;
+        margin: auto;
+    }
+
+    .btn2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #181f72;
+        color: #ffffff;
+    }
+
+    .btn2:hover,
+    .btn:hover {
+        background-color: #181f72;
+        cursor: pointer;
+    }
+
+    .del_btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+    }
+
+    .btn_text {
+        font: 500 15px Noto Sans KR;
+    }
+
+    .btn_text2 {
+        font: 500 20px Noto Sans KR;
+    }
+
+    .add_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 650px;
+        margin-top: 10px;
+    }
+</style>
+
+<body onload="showH($('.now_tab'))">
+    <!-- <form name="history_add" action="/history_add" method="POST">
+        <input type="hidden" name="year" value="2017"/>
+        <textarea name="text" style="height:300px; width: 600px;"></textarea>
+        <input type="submit" value="submit"  style="height:50px; width: 100px;"/>
+    </form> -->
+    <div class="container">
+        <%var years = [];
+        for(var i=0; i<his.length; i++) {
+            years[i] = his[i].nh_date.slice(0,4);
+        }
+        years = Array.from(new Set(years));
+        var e = (Math.floor(Number(years[0])/5))+1;
+        var s = Math.floor(Number(years[years.length-1]/5));
+        %>
+        <div class="tabs">
+            <%for(var i=e; i>s; i--) {
+                if(i == e) {%>
+            <div class="tab now_tab" id="<%=i%>" data-s="<%=i*5%>" data-e="<%=(i-1)*5+1%>" onclick="showH($(this))">
+                <%=i*5%>~<%=(i-1)*5+1%></div>
+            <%} else {%>
+            <div class="tab" id="<%=i%>" data-s="<%=i*5%>" data-e="<%=(i-1)*5+1%>" onclick="showH($(this))">
+                <%=i*5%>~<%=(i-1)*5+1%></div>
+            <%}
+            }%>
+        </div>
+        <div class="his_area">
+            <%for(var i=0; i<his.length; i++) {%>
+            <div class="row" data-year="<%=his[i].nh_date.slice(0,4)%>">
+                <div class="history_con">
+                    <div class="date" style="font-weight:bold;"><%=his[i].nh_date.slice(0,10)%></div>
+                    <textarea class="con" disabled><%=his[i].nh_content%></textarea>
+                    <div class="line"></div>
+                </div>
+                <div class="del_btn" onclick="del_his('<%=his[i].nh_idx%>')">
+                    <div class="btn">
+                        <div class="btn_text">삭제</div>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+        </div>
+
+        <div class="add_btn">
+            <div class="btn2" onclick="add_his()">
+                <div class="btn_text2">연혁추가</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

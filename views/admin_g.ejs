@@ -1,0 +1,156 @@
+<% include admin_header %>
+<script>
+    $('.a_g').addClass('now_page');
+</script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <!-- <link rel='stylesheet' href='/stylesheets/calendar.css' /> -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    function checkImg($this) {
+        if ($this.hasClass('checked')) {
+            $this.removeClass('checked');
+        } else {
+            $this.addClass('checked');
+        }
+        count_img();
+    }
+
+    function count_img() {
+        var count = $('.checked').length;
+        $('#img_count').val(count);
+    }
+
+    function del_img() {
+        var chk = $('.checked');
+        var text = "";
+        for(var i=0; i<chk.length; i++){
+            console.log($(chk[i]).data('idx'));
+            text += $(chk[i]).data('idx') + ",";
+        }
+        text = text.substr(0, text.length-1)
+        window.location.href = "/admin_g_d?idx="+text;
+    }
+</script>
+<style>
+    body {
+        margin: 0px;
+        font-family: Noto Sans KR !important;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+    }
+
+    .img_box {
+        width: 145px;
+        height: 145px;
+        border-radius: 18px;
+        margin: 5px;
+        opacity: 0.3;
+    }
+
+    .img_box:hover {
+        cursor: pointer;
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        border-radius: 18px;
+    }
+
+    .display_area {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80vw;
+    }
+
+    .white_box {
+        width: 145px;
+        height: 1px;
+        background-color: #ffffff;
+        margin: 5px;
+    }
+
+    .img_box.checked {
+        opacity: 1;
+    }
+
+    .row {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .del_text {
+        font: 400 22px Noto Sans KR;
+    }
+
+    #img_count {
+        width: 40px;
+        border: solid 0px #ffffff;
+        font: 500 30px Noto Sans KR;
+        text-align: center;
+    }
+
+    .del_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 40px;
+        border-radius: 25px;
+        background-color: #181f72;
+    }
+
+    .del_btn:hover {
+        cursor: pointer;
+    }
+
+    .btn_text {
+        font: 500 24px Noto Sans KR;
+        color: #ffffff;
+    }
+</style>
+
+<body onload="count_img()">
+    <div class="container">
+        <div class="display_area">
+            <%for(var i=0; i<gall.length; i++){
+                var imgArray = gall[i].g_image.split(",");%>
+            <div class="img_box" data-idx="<%=gall[i].g_idx%>" onclick="checkImg($(this))">
+                <img class="img" src="gallery/<%=imgArray[0]%>" alt="사진없음" />
+            </div>
+            <%}%>
+            <%for(var i=0; i<15; i++){%>
+            <div class="white_box"></div>
+            <%}%>
+        </div>
+        <div class="row">
+            <div class="del_text">선택된&nbsp</div>
+            <input type="text" id="img_count" />
+            <div class="del_text">개의 사진을&nbsp</div>
+            <div class="del_btn" onclick="del_img()">
+                <div class="btn_text">삭제</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

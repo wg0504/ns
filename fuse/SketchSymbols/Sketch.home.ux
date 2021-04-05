@@ -1,5 +1,0 @@
-<Panel ux:Class="Sketch.home" Width="22" Height="22">
-	<Image File="images/246b00ff16f94a5bd409e108c85f45f27a5a6388.png" Width="100%" Height="100%" Alignment="TopLeft" Margin="0">
-		<!-- web-page-home-2 -->
-	</Image>
-</Panel>

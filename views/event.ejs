@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <link rel='stylesheet' href='/stylesheets/event.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $(window).on('load', function () {
+                $('.monthbox').each((idx, elm) => {
+                    $(elm).on('click', (event) => {
+                        if ($(elm).hasClass('selbox')) {
+                            showToday();
+                        } else {
+                            $('.selbox').removeClass('selbox');
+                            $('.seltext').removeClass('seltext');
+                            $(elm).addClass('selbox');
+                            $(elm).children().addClass('seltext');
+                            var m = $(elm).attr('data-month');
+                            var y = $('.content1').attr('data-year');
+                            showCalendar(y, m, 'none');
+                        }
+                    });
+                });
+            });
+        })(jQuery);
+    </script>
+</head>
+<style>
+
+</style>
+
+<% 
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth()+1;
+%>
+
+<body onload="showCalendar('<%=year%>','<%=month%>', 'display')">
+    <% var eventStr = JSON.stringify(event); %>
+    <div id="event" data-event='<%=eventStr%>' data-u_idx='<%=u_idx%>'></div>
+    <div class="container">
+        <div id="calendarDiv"></div>
+        <script type="text/javascript">
+            function showCalendar(y, m, display) {
+                var $event = $('#event').data('event');
+                y = Number(y);
+                m = Number(m);
+                var $monthbox = $('[data-month="' + m + '"]');
+                $('.selbox').removeClass('selbox');
+                $('.seltext').removeClass('seltext');
+                $monthbox.addClass('selbox');
+                $monthbox.children().addClass('seltext');
+                var text = '<div class="content1" data-year=' + y + ' data-month=' + m + '>\n';
+                text += '<div class="fold_top">';
+                text += '<div class="content_top">';
+                text += '<div class="top_inner1"><div class="content_year"> ' + y + '년&nbsp' + m + '월 </div>';
+                text +=
+                    '<div class="icon1box"><img class="icon1up" src="images/calendar_up.svg" alt="사진없음" onclick="calendarUp()"/><img class="icon1down" src="images/calendar_up.svg" alt="사진없음" onclick="calendarDown()"/></div></div>';
+                text +=
+                    '<div class="top_inner2"><div class="icon2" onclick="showMonth()"><div class="icon2text">달 별</div></div></div>';
+                text += '</div>';
+                text += '<div class="content_text">월간 행사 및 주요 일정</div>';
+                if ($('#event').data('u_idx') == '1') {
+                    text +=
+                        '<div class="icons"><div class="iconbox" onclick="modifyEvent()"><img class="img1" src="/images/g_add_pen.svg" alt="사진없음" /></div>';
+                    text +=
+                        '<div class="iconbox" onclick="addEvent()"><img class="img1" src="/images/g_add_plus.svg" alt="사진없음" /></div></div>';
+                } else {
+                    text += '<div class="icons"><div class="iconbox"></div></div>'
+                }
+                text += '<div class="content_week">\n<div class="dayofweek" style="color:red;">SUN</div>' +
+                    '<div class="dayofweek">MON</div>' +
+                    '<div class="dayofweek">TUE</div>' +
+                    '<div class="dayofweek">WED</div>' +
+                    '<div class="dayofweek">THU</div>' +
+                    '<div class="dayofweek">FRI</div>' +
+                    '<div class="dayofweek">SAT</div>\n</div>';
+
+                var d1 = (y + (y - y % 4) / 4 - (y - y % 100) / 100 + (y - y % 400) / 400 +
+                    m * 2 + (m * 5 - m * 5 % 9) / 9 - (m < 3 ? y % 4 || y % 100 == 0 && y % 400 ? 2 : 3 : 4)) % 7;
+                for (i = 0; i < 42; i++) {
+                    if (i % 7 == 0) {
+                        if (i != 0) {
+                            text += '</div>';
+                        }
+                        text += '\n<div class="content_week">'
+                    }
+                    if (i < d1 || i >= d1 + (m * 9 - m * 9 % 8) / 8 % 2 + (m == 2 ? y % 4 || y % 100 == 0 && y % 400 ?
+                            28 : 29 : 30))
+                        text += '<div class="emptyday"> </div>';
+                    else
+                        text += '<div class="existday" onclick="selectDay(' + (i + 1 - d1) + ')" data-day="' + (i + 1 -
+                            d1) + '"' + (i % 7 ? '' : ' style="color:red;"') + '>' + (i + 1 - d1) +
+                        '</div>';
+                }
+                text += '</div>\n<div class="line"></div></div>';
+                document.getElementById('calendarDiv').innerHTML = text;
+                $('.content1').css('display', display);
+                setHeight();
+                drawCalendar($event);
+                drawEventL($event);
+            }
+
+            function drawEventL($event) {
+                var text = "";
+                for (var i = 0; i < $event.length; i++) {
+                    var y = $('.content1').data('year');
+                    var m = $('.content1').data('month');
+                    var t = $event[i].e_content;
+                    var ym = Number("" + y + ((m < 10) ? ("0" + m) : m));
+                    var sym = Number($event[i].e_start.slice(0, 6));
+                    var eym = Number($event[i].e_end.slice(0, 6));
+                    var sd = Number($event[i].e_start.slice(6, 8));
+                    var ed = Number($event[i].e_end.slice(6, 8));
+                    var idx = $event[i].e_idx;
+                    // console.log(sym+'/'+ym+'/'+eym);
+                    if ((sym == ym) && (ym == eym)) {
+                        if (sd == ed) {
+                            text += drawEvent(sd, ed, t, idx);
+                        } else if (sd < ed) {
+                            text += drawEvent(sd, ed, t, idx);
+                        }
+                    } else if ((sym == ym) && (ym < eym)) {
+                        text += drawEvent(sd, ed, t, idx);
+                    } else if ((sym < ym) && (ym < eym)) {
+                        text += drawEvent(sd, ed, t, idx);
+                    } else if ((sym < ym) && (ym == eym)) {
+                        text += drawEvent(sd, ed, t, idx);
+                    }
+                }
+                text = text.substr(0, (text.length - 29));
+                document.getElementById('eventDiv').innerHTML = text;
+                $('.content_week').toggle();
+                setHeight();
+                $('.line').toggle();
+                $('.icon1up').toggle();
+                $('.icon1down').toggle();
+                $('.content_text').text('다가오는 이벤트');
+            }
+
+            function drawEvent(s, e, t, idx) {
+                var text = "";
+                if (s == e) {
+                    text += '<div class="content3sub"><div class="delete_icon" data-display="none" onclick="deleteEvent(' + idx +
+                        ')"><img class="img1" src="images/e_del_icon.svg" alt="사진없음" /></div><div class="oval_day"><div class="oval_text">' + s +
+                        '</div></div>';
+                    text += '<div class="event_text">' + t + '</div></div>';
+                } else {
+                    text += '<div class="content3sub"><div class="delete_icon" data-display="none" onclick="deleteEvent(' + idx +
+                        ')"><img class="img1" src="images/e_del_icon.svg" alt="사진없음" /></div><div class="oval_day2"><div class="oval_text">' + s +
+                        '</div><div class="oval_line2"></div>';
+                    text += '<div class="oval_text">' + e + '</div></div><div class="event_text">' + t + '</div></div>';
+                }
+                text += '<div class="oval_line_box"><div class="oval_line"></div></div>'
+                return text;
+            }
+
+            function drawCalendar($event) {
+                for (var i = 0; i < $event.length; i++) {
+                    var y = $('.content1').data('year');
+                    var m = $('.content1').data('month');
+                    var ym = Number("" + y + ((m < 10) ? ("0" + m) : m));
+                    var sym = Number($event[i].e_start.slice(0, 6));
+                    var eym = Number($event[i].e_end.slice(0, 6));
+                    var sd = Number($event[i].e_start.slice(6, 8));
+                    var ed = Number($event[i].e_end.slice(6, 8));
+                    // console.log(sym+'/'+ym+'/'+eym);
+                    if ((sym == ym) && (ym == eym)) {
+                        if (sd == ed) {
+                            drawSelday(sd, ed);
+                        } else if (sd < ed) {
+                            drawSelday(sd, ed);
+                        }
+                    } else if ((sym == ym) && (ym < eym)) {
+                        drawSelday(sd, 31);
+                    } else if ((sym < ym) && (ym < eym)) {
+                        drawSelday(1, 31);
+                    } else if ((sym < ym) && (ym == eym)) {
+                        drawSelday(1, ed);
+                    }
+                }
+            }
+
+            function drawSelday(s, e) {
+                // console.log(s, e);
+                for (var d = s; d <= e; d++) {
+                    $('[data-day=' + d + ']').addClass('selday');
+                }
+            }
+
+            function setHeight() {
+                var h = $('#calendarDiv').css('height');
+                var hh = 'calc(100vh - ' + h + ')';
+                $('.content3').css('height', hh);
+            }
+
+            function calcHeight(h1, h2) {
+                h1 = Number(h1.slice(0, 6));
+                h2 = Number(h2.slice(0, 6));
+                return String(h1 - h2) + 'px';
+            }
+
+            function calendarUp() {
+                $('.content_week').slideUp(() => {
+                    setHeight();
+                });
+                $('.line').slideUp();
+                $('.icon1up').hide();
+                $('.icon1down').show();
+                $('.content_text').text('다가오는 이벤트');
+            }
+
+            function calendarDown() {
+                $('.content_week').slideDown(() => {
+                    setHeight();
+                });
+                $('.line').slideDown();
+                $('.icon1up').show();
+                $('.icon1down').hide();
+                $('.content_text').text('월간 행사 및 주요 일정');
+            }
+
+            function selectDay(day) {
+                console.log(day);
+                // var $day = $('[data-day=' + day + ']');
+                // if ($day.hasClass('selday')) {
+                //     $day.removeClass('selday');
+                // } else {
+                //     $day.addClass('selday');
+                // }
+            }
+
+            function showMonth() {
+                $('.content1').hide();
+                $('.content3').hide();
+                $('.content2').css('display', 'flex');
+            }
+
+            function showToday() {
+                $('.content1').show();
+                $('.content3').css('display', 'block', () => {
+                    setHeight();
+                });
+                $('.content2').css('display', 'none');
+            }
+
+            function prevYear() {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                y = Number(y) - 1;
+                m = Number(m);
+                showCalendar(y, m, 'none');
+                $('.content_yearT').text(y + '년');
+                $('.year_prev').text('<' + (y - 1));
+                $('.year_next').text((y + 1) + '>');
+            }
+
+            function nextYear() {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                y = Number(y) + 1;
+                m = Number(m);
+                showCalendar(y, m, 'none');
+                $('.content_yearT').text(y + '년');
+                $('.year_prev').text('<' + (y - 1));
+                $('.year_next').text((y + 1) + '>');
+            }
+
+            function modifyEvent() {
+                console.log($('.delete_icon').data('display'));
+                if($('.delete_icon').data('display') == 'none') {
+                    $('.delete_icon').css('display', 'block');
+                    $('.delete_icon').data('display', 'block');
+                    $('.event_text').css('width','205px');
+                    $('.oval_line').css('width','208px');
+                } else {
+                    $('.delete_icon').css('display', 'none');
+                    $('.delete_icon').data('display', 'none');
+                    $('.event_text').css('width','240px');
+                    $('.oval_line').css('width','243px');
+                }
+            }
+
+            function addEvent() {
+                var u_idx = $('#event').data('u_idx');
+                window.location.href = '/event_add?u_idx='+u_idx;
+            }
+
+            function deleteEvent(e_idx) {
+                var u_idx = $('#event').data('u_idx');
+                window.location.href = '/event_delete?e_idx='+e_idx+"&u_idx="+u_idx;
+            }
+        </script>
+        <div class="content2">
+            <div class="content_top">
+                <div class="top_inner1">
+                    <div class="content_yearT"><%=year%>년</div>
+                </div>
+                <div class="top_inner2">
+                    <div class="icon2" onclick="showToday()">
+                        <div class="icon2text">오늘</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_top">
+                <div onclick="prevYear()">
+                    <div class="year_prev"><<%=year-1%></div>
+                </div>
+                <div onclick="nextYear()">
+                    <div class="year_next"><%=year+1%>></div>
+                </div>
+            </div>
+            <div class="content2sub">
+                <%for(var i=1; i<13; i++){ %>
+                <div class="monthbox" data-month='<%=i%>'>
+                    <div class="monthtext">
+                        <%=i%>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <div class="content3">
+            <div id="eventDiv"></div>
+            <div class="oval_white"></div>
+        </div>
+</body>
+<!-- <script>
+    const _C = document.querySelector('.container');
+
+        let i = 0;
+        let x0 = null;
+
+        function unify(e) {
+            return e.changedTouches ? e.changedTouches[0] : e;
+        }
+
+        function lock(e) {
+            x0 = unify(e).clientX;
+        }
+
+        function move(e) {
+            if (x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0;
+                let s = Math.sign(dx);
+                if(dx < -50){
+                    // console.log('left');
+                } else if (dx > 50) {
+                    // console.log('right');
+                    window.location.href = "/event?#b";
+                }
+            }
+        }
+
+        _C.addEventListener('mousedown', lock, false);
+        _C.addEventListener('touchstart', lock, false);
+
+        _C.addEventListener('touchmove', e => {
+            e.preventDefault()
+        }, false);
+
+        _C.addEventListener('mouseup', move, false);
+        _C.addEventListener('touchend', move, false);
+</script> -->
+
+</html>

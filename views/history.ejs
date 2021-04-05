@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <!-- <form name="history_add" action="/history_add" method="POST">
+        <input type="hidden" name="year" value="2017"/>
+        <textarea name="text" style="height:300px; width: 600px;"></textarea>
+        <input type="submit" value="submit"  style="height:50px; width: 100px;"/>
+    </form> -->
+
+    <%for(var i=0; i<his.length; i++) {%>
+        <div class="date" style="font-weight:bold;"><%=his[i].nh_date.slice(0,10)%></div>
+        <textarea class="con" style="height:100px; width: 500px; resize:none; background-color: #ffffff; border:solid 0px #ffffff; overflow:hidden;" disabled><%=his[i].nh_content%></textarea>
+        <div class="line" style="height:1px; width:600px; background-color: #000000;"></div>
+    <%}%>
+</body>
+
+</html>

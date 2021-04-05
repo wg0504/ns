@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <link rel='stylesheet' href='/stylesheets/event_add.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="javascripts/event_add.js"></script>
+</head>
+<style>
+    .cal_frame {
+        width: 100%;
+        height: 100%;
+        border: solid 0px #ffffff;
+    }
+
+    .pop_layer {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 370px;
+        border-radius: 28px;
+        background-color: #ffffff;
+        z-index: 10;
+    }
+</style>
+<% 
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = ((today.getMonth()+1) < 10) ? '0'+(today.getMonth()+1) : (today.getMonth()+1);
+    var prev_month = ((today.getMonth()) < 10) ? '0'+(today.getMonth()) : (today.getMonth());
+    var next_month = ((today.getMonth()+2) < 10) ? '0'+(today.getMonth()+2) : (today.getMonth()+2);
+    var day = ((today.getDay()) < 10) ? '0'+(today.getDay()) : (today.getDay());
+    var prev_day = ((today.getDay()-1) < 10) ? '0'+(today.getDay()-1) : (today.getDay()-1);;
+    var next_day = ((today.getDay()+1) < 10) ? '0'+(today.getDay()+1) : (today.getDay()+1);;
+%>
+
+<body>
+    <form name="event_add" action="/event_add" method="POST">
+        <input type="hidden" name="u_idx" value='<%=u_idx%>' />
+        <input type="hidden" name="e_start" value='00000000' />
+        <input type="hidden" name="e_end" value='00000000' />
+        <div class="message"><input type="text" class="msg_text" /></div>
+        <div class="dim_layer">
+            <div class="dim_bg" onclick="bg_click()"></div>
+            <div id="layer" class="pop_layer">
+                <div class="pop_box">
+                    <iframe class="cal_frame" src="/calendar"></iframe>
+                    <div class="pop_rowline"></div>
+                    <div class="pop_col2">
+                        <div class="pop_cancel" onclick="pop_cancel_click()">
+                            <div class="pop_text">
+                                취소
+                            </div>
+                        </div>
+                        <div class="pop_colline"></div>
+                        <div class="pop_delete" onclick="pop_apply_click()">
+                            <div class="pop_text">
+                                적용
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- <div class="content_w"></div> -->
+            <div class="title">
+                이벤트 추가
+            </div>
+            <div class="content1">
+                <div class="subtitle">
+                    제목
+                </div>
+            </div>
+            <div class="content2">
+                <input type="text" class="rect1" name="e_content" />
+            </div>
+            <div class="content1">
+                <div class="subtitle">
+                    시작
+                </div>
+            </div>
+            <div class="content2">
+                <input type="text" class="rect1" name="start" onclick="datePicker('start')" readonly />
+                <!-- <input type="date" class="rect1" name="start" /> -->
+            </div>
+            <div class="content1">
+                <div class="subtitle">
+                    종료
+                </div>
+            </div>
+            <div class="content2">
+                <input type="text" class="rect1" name="end" onclick="datePicker('end')" readonly />
+                <!-- <input type="date" class="rect1" name="end" /> -->
+            </div>
+            <div class="content4_bg">
+                <div class="content4" onclick="addEvent()">
+                    <!-- <div class="iconbox2"><img class="img2" src="/images/gallery_add_v.svg" alt="사진없음" /></div> -->
+                    <div class="con_text">저장</div>
+                </div>
+            </div>
+            <!-- <script>
+                if (!Modernizr.touch || !Modernizr.inputtypes.date) {
+                    $('input[type=date]')
+                        .attr('type', 'text')
+                        .datepicker({
+                            // Consistent format with the HTML5 picker
+                            dateFormat: 'yyyy.mm.dd'
+                        });
+                }
+            </script> -->
+        </div>
+    </form>
+</body>
+<div>
+    <!-- <div class="pop_box">
+    <div class="pop_col1">
+        <div class="pop_text">
+            날짜 설정
+        </div>
+    </div>
+    <div class="pop_rowline"></div>
+    <div class="pop_calendar">
+        <div class="pop_cal_row">
+            <div class="pop_cal_item">
+                <div class="iconbox1" id="prev_yb" onclick="prevYear()"><img class="img1"
+                        src="images/e_cal_up.svg" /></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="iconbox1" id="prev_mb" onclick="prevMonth()"><img class="img1"
+                        src="images/e_cal_up.svg" /></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="iconbox1" id="prev_db" onclick="prevDay()"><img class="img1"
+                        src="images/e_cal_up.svg" />
+                </div>
+            </div>
+        </div>
+        <div class="pop_cal_row">
+            <div class="pop_cal_item"><input class="cal_prev" id="prev_year" type="text"
+                    value="<%=year-1%>" disabled /></div>
+            <div class="pop_cal_item"><input class="cal_prev" id="prev_month" type="text"
+                    value="<%=prev_month%>" disabled /></div>
+            <div class="pop_cal_item"><input class="cal_prev" id="prev_day" type="text"
+                    value="<%=prev_day%>" disabled /></div>
+        </div>
+        <div class="pop_cal_row">
+            <div class="pop_cal_item">
+                <div class="pop_cal_line"></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="pop_cal_line"></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="pop_cal_line"></div>
+            </div>
+        </div>
+        <div class="pop_cal_row">
+            <div class="pop_cal_item"><input class="cal_now" id="now_year" type="text" value="<%=year%>"
+                    disabled /></div>
+            <div class="pop_cal_item"><input class="cal_now" id="now_month" type="text"
+                    value="<%=month%>" disabled /></div>
+            <div class="pop_cal_item"><input class="cal_now" id="now_day" type="text" value="<%=day%>"
+                    disabled /></div>
+        </div>
+        <div class="pop_cal_row">
+            <div class="pop_cal_item">
+                <div class="pop_cal_line"></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="pop_cal_line"></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="pop_cal_line"></div>
+            </div>
+        </div>
+        <div class="pop_cal_row">
+            <div class="pop_cal_item"><input class="cal_next" id="next_year" type="text"
+                    value="<%=year+1%>" disabled /></div>
+            <div class="pop_cal_item"><input class="cal_next" id="next_month" type="text"
+                    value="<%=next_month%>" disabled /></div>
+            <div class="pop_cal_item"><input class="cal_next" id="next_day" type="text"
+                    value="<%=next_day%>" disabled /></div>
+        </div>
+        <div class="pop_cal_row">
+            <div class="pop_cal_item">
+                <div class="iconbox1" id="next_yb" onclick="nextYear()"><img class="img1"
+                        src="images/e_cal_down.svg" /></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="iconbox1" id="next_mb" onclick="nextMonth()"><img class="img1"
+                        src="images/e_cal_down.svg" /></div>
+            </div>
+            <div class="pop_cal_item">
+                <div class="iconbox1" id="next_db" onclick="nextDay()"><img class="img1"
+                        src="images/e_cal_down.svg" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="pop_rowline"></div>
+    <div class="pop_col2">
+        <div class="pop_cancel" onclick="pop_cancel_click()">
+            <div class="pop_text">
+                취소
+            </div>
+        </div>
+        <div class="pop_colline"></div>
+        <div class="pop_delete" onclick="pop_apply_click()">
+            <div class="pop_text">
+                적용
+            </div>
+        </div>
+    </div>
+</div> -->
+</div>
+
+</html>

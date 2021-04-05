@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1 maximum-scale=1.0, user-scalable=0" />
+    <link rel='stylesheet' href='/stylesheets/notice.css' />
+    <link rel='stylesheet'  href='/stylesheets/common.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/notice.js"></script>
+    <script src="/javascripts/ajax.js"></script>
+</head>
+<script>
+    function filter_cancel() {
+        $('.background').css('visibility', 'hidden');
+        $('.filter').css('visibility', 'hidden');
+        return false;
+    }
+
+    function filter_apply() {
+        $('.background').css('visibility', 'hidden');
+        $('.filter').css('visibility', 'hidden');
+        return false;
+    }  
+
+    function search() {
+        var si = $('.serach_input').val();
+        var u_idx = $('#u_idx').val();
+        var sm = $('.selected').parent().data('filter');
+        // console.log(si);
+        if (si == "") {
+            $('.search_input').focus();
+        } else {
+            window.location.href = "/notice_search?u_idx="+u_idx+"&si="+si+"&sm="+sm;
+        }
+    }
+</script>
+<style>
+    .f_row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top: solid 1px #f4f4f4;
+    }
+
+    /* .f_row_1, */
+    .f_row_2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 47px;
+    }
+
+    .f_row_1 {
+        border-right: solid 1px #f4f4f4;
+    }
+
+    .f_text_1 {
+        font-size: 19px;
+        font-weight: 400;
+    }
+
+    .f_text_2 {
+        font-size: 19px;
+        font-weight: 500;
+    }
+</style>
+<body>
+    <input type="hidden" id="u_idx" value="<%=u_idx%>" />
+    <div class="column container">
+        <div style="width:100vw; background-color:#ffffff; height: 53px;">
+            <div class="serach_div">
+                <div class="row_inner serach_box">
+                    <img class="items filter_icon" src="/images/filter.svg" />
+                    <input class="items100 serach_input" type="text" />
+                    <img class="items serach_icon" src="/images/search.svg" onclick="search()"/>
+                </div>
+            </div>
+        </div>
+        <div class="background"></div>
+        <div class="filter column">
+            <div class="filter_top">
+                <img class="filter_icon_black" src="/images/filter_black.svg" />
+                <div>검색 필터</div>
+            </div>
+            <%  var selected = '';
+                var filter_list=[{num:1,text:'전체 (제목 + 본문)'},{num:2,text:'게시물 제목'},{num:3,text:'본문 내용'}]
+                for(var i=0;i<filter_list.length;i++){
+                    if(i===0) selected = 'selected'
+                    else selected = ''%>
+                <div class="row_inner radio_box" data-filter="<%=filter_list[i].num%>">
+                    <div class="radio_btn  <%=selected%>"></div><%=filter_list[i].text%>
+                </div>
+            <%}%>
+            <div class="filter_bottom">
+                <div class="f_row">
+                    <!-- <div class="f_row_1" onclick="filter_cancel()"><div class="f_text_1">취소</div></div> -->
+                    <div class="f_row_2" onclick="filter_apply()"><div class="f_text_2">적용</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="column items padding_LR writing">
+            <%for(var i=0; i<notice.length; i++){%>
+            <a href="/notice_detail?n_idx=<%=notice[i].n_idx%>&u_idx=<%=u_idx%>">
+                <div class="row_inner items box" data-slide="up">
+                    <div class="row_inner items">
+                        <div class="col-xs column items100 notice">
+                            <div class="row_inner subject">
+                                <%if(notice[i].n_file == null){%>
+                                <%=notice[i].n_title%>
+                                <%} else if (notice[i].n_file == "") {%>
+                                <%=notice[i].n_title%>
+                                <%} else {%>
+                                <%=notice[i].n_title%>&nbsp<img src="/images/clip.svg" />
+                                <%}%>
+                            </div>
+                            <div class="row_inner date">
+                                <%=notice[i].n_date.slice(0,10)%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+        </div>
+        <%if(more == '1'){%>
+        <div class="column load" data-count=1>
+            더보기
+            <img src="/images/up-arrow.svg" />
+        </div>
+        <%}%>
+    </div>
+</body>
+<!-- <script>
+    const _C = document.querySelector('.container');
+
+        let i = 0;
+        let x0 = null;
+
+        function unify(e) {
+            return e.changedTouches ? e.changedTouches[0] : e;
+        }
+
+        function lock(e) {
+            x0 = unify(e).clientX;
+        }
+
+        function move(e) {
+            if (x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0;
+                let s = Math.sign(dx);
+                if(dx < -50){
+                    // console.log('left');
+                } else if (dx > 50) {
+                    // console.log('right');
+                    window.location.href = "/notice?#b";
+                }
+            }
+        }
+
+        _C.addEventListener('mousedown', lock, false);
+        _C.addEventListener('touchstart', lock, false);
+
+        _C.addEventListener('touchmove', e => {
+            e.preventDefault()
+        }, false);
+
+        _C.addEventListener('mouseup', move, false);
+        _C.addEventListener('touchend', move, false);
+</script> -->
+
+</html>

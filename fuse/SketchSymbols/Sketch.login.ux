@@ -1,6 +1,0 @@
-<Panel ux:Class="Sketch.login" Width="71" Height="27" LOGIN="LOGIN">
-	<string ux:Property="LOGIN" />
-	<Text Color="0.8930432, 0.8930432, 0.8930432, 1" FontSize="22" Value="{Property LOGIN}" TextTruncation="None" TextWrapping="Wrap" TextAlignment="Left" Width="74" Alignment="HorizontalCenter" Offset="2.112676%, 0" Margin="0">
-		<!-- LOGIN -->
-	</Text>
-</Panel>

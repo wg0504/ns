@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,inital-scale=1,maximum-scale=1.0,user-scalable=0">
+    </meta>
+    <link rel='stylesheet' href='/stylesheets/calendar.css' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Noto+Sans+KR:100,300,400,500,700,900"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $(window).on('load', function () {
+                $('.monthbox').each((idx, elm) => {
+                    $(elm).on('click', (event) => {
+                        if ($(elm).hasClass('selbox')) {
+                            showToday();
+                        } else {
+                            $('.selbox').removeClass('selbox');
+                            $('.seltext').removeClass('seltext');
+                            $(elm).addClass('selbox');
+                            $(elm).children().addClass('seltext');
+                            var m = $(elm).attr('data-month');
+                            var y = $('.content1').attr('data-year');
+                            showCalendar(y, m, 'none');
+                        }
+                    });
+                });
+            });
+        })(jQuery);
+    </script>
+</head>
+
+<% 
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth()+1;
+%>
+
+<body onload="showCalendar('<%=year%>','<%=month%>', 'display')">
+    <input type="hidden" id="date" />
+    <div class="container">
+        <div id="calendarDiv"></div>
+        <script type="text/javascript">
+            function showCalendar(y, m, display) {
+                y = Number(y);
+                m = Number(m);
+                var $monthbox = $('[data-month="' + m + '"]');
+                $('.selbox').removeClass('selbox');
+                $('.seltext').removeClass('seltext');
+                $monthbox.addClass('selbox');
+                $monthbox.children().addClass('seltext');
+                var text = '<div class="content1" data-year=' + y + ' data-month=' + m + '>\n';
+                text += '<div class="fold_top">';
+                text += '<div class="content_top">';
+                text +=
+                    '<div class="top_inner1"><div class="content_year" onclick="prevMonth()"><&nbsp&nbsp&nbsp&nbsp</div></div>' +
+                    '<div class="top_inner2"><div class="content_year" onclick="showMonth()"> ' + y + '년&nbsp' + m + '월</div></div>' +
+                    '<div class="top_inner1"><div class="content_year" onclick="nextMonth()">&nbsp&nbsp&nbsp&nbsp></div></div>';
+                text += '</div></div>';
+                text += '<div class="content_week">\n<div class="dayofweek" style="color:red;">SUN</div>' +
+                    '<div class="dayofweek">MON</div>' +
+                    '<div class="dayofweek">TUE</div>' +
+                    '<div class="dayofweek">WED</div>' +
+                    '<div class="dayofweek">THU</div>' +
+                    '<div class="dayofweek">FRI</div>' +
+                    '<div class="dayofweek">SAT</div>\n</div>';
+
+                var d1 = (y + (y - y % 4) / 4 - (y - y % 100) / 100 + (y - y % 400) / 400 +
+                    m * 2 + (m * 5 - m * 5 % 9) / 9 - (m < 3 ? y % 4 || y % 100 == 0 && y % 400 ? 2 : 3 : 4)) % 7;
+                for (i = 0; i < 42; i++) {
+                    if (i % 7 == 0) {
+                        if (i != 0) {
+                            text += '</div>';
+                        }
+                        text += '\n<div class="content_week">'
+                    }
+                    if (i < d1 || i >= d1 + (m * 9 - m * 9 % 8) / 8 % 2 + (m == 2 ? y % 4 || y % 100 == 0 && y % 400 ?
+                            28 : 29 : 30))
+                        text += '<div class="day"><div class="emptyday"> </div></div>';
+                    else
+                        text += '<div class="day"><div class="existday" onclick="selectDay(' + (i + 1 - d1) +
+                        ')" data-day="' + (i + 1 -
+                            d1) + '"' + (i % 7 ? '' : ' style="color:red;"') + '>' + (i + 1 - d1) +
+                        '</div></div>';
+                }
+                text += '</div>\n</div>';
+                document.getElementById('calendarDiv').innerHTML = text;
+                $('.content1').css('display', display);
+            }
+
+            function selectDay(day) {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                m = (m < 10) ? '0' + m : m;
+                var d = (day < 10) ? '0' + day : day;
+                var date = y+m+d;
+                var $day = $('[data-day=' + day + ']');
+                $('.selday').removeClass('selday');
+                $day.addClass('selday');
+                $day.parent().addClass('selday');
+                window.location.href = '/calendar#'+date;
+                $('#date').val(date);
+            }
+
+            function showMonth() {
+                $('.content1').hide();
+                $('.content2').css('display', 'flex');
+            }
+
+            function showToday() {
+                $('.content1').show();
+                $('.content2').css('display', 'none');
+            }
+
+            function prevYear(month) {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                y = Number(y) - 1;
+                if (month) {
+                    m = Number(month);
+                    showCalendar(y, m, 'display');
+                } else {
+                    m = Number(m);
+                    showCalendar(y, m, 'none');
+                }
+                $('.content_yearT').attr('value', y + '년');
+                $('.year_prev').attr('value', '<' + (y - 1));
+                $('.year_next').attr('value', (y + 1) + '>');
+            }
+
+            function nextYear(month) {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                y = Number(y) + 1;
+                if (month) {
+                    m = Number(month);
+                    showCalendar(y, m, 'display');
+                } else {
+                    m = Number(m);
+                    showCalendar(y, m, 'none');
+                }
+                $('.content_yearT').attr('value', y + '년');
+                $('.year_prev').attr('value', '<' + (y - 1));
+                $('.year_next').attr('value', (y + 1) + '>');
+            }
+
+            function prevMonth() {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                y = Number(y);
+                m = Number(m) - 1;
+                if (m == 0) {
+                    prevYear(12);
+                } else {
+                    showCalendar(y, m, 'display');
+                }
+            }
+
+            function nextMonth() {
+                var y = $('.content1').attr('data-year');
+                var m = $('.content1').attr('data-month');
+                y = Number(y);
+                m = Number(m) + 1;
+                if (m == 13) {
+                    nextYear(1);
+                } else {
+                    showCalendar(y, m, 'display');
+                }
+            }
+        </script>
+        <div class="content2">
+            <div class="content_top">
+                <div class="top_inner1" onclick="prevYear()">
+                    <div class="content_year">
+                        <&nbsp&nbsp&nbsp&nbsp</div> </div> <div class="top_inner1">
+                            <input type="text" class="content_yearT" value="<%=year%>년" disabled />
+                    </div>
+                    <div class="top_inner1" onclick="nextYear()">
+                        <div class="content_year">&nbsp&nbsp&nbsp&nbsp></div>
+                    </div>
+                </div>
+                <div class="content2sub">
+                    <%for(var i=1; i<13; i++){ %>
+                    <div class="monthbox" data-month='<%=i%>'>
+                        <div class="monthtext">
+                            <%=i%>
+                        </div>
+                    </div>
+                    <%}%>
+            </div>
+        </div>
+</body>
+
+</html>
